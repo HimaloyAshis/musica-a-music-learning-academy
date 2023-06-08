@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaUserCircle } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     return (
@@ -8,9 +9,9 @@ const Navbar = () => {
                 <h1>Musica Academy</h1>
             </div>
             <div className='flex gap-3'>
-                <p>Home</p>
-                <p>Instructors</p>
-                <p>Dashboard</p>
+                <Link>Home</Link>
+                <Link>Instructors</Link>
+                <Link>Dashboard</Link>
             </div>
             <div>
                 <FaUserCircle/>
