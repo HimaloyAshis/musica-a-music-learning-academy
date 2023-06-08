@@ -8,28 +8,28 @@ const Slider = () => {
         <Carousel className='text-[#B7B7B7]'>
 
             <div className='img1'>
-                <p className=' text-3xl pt-8'>Learn Piano efficiently, that will take you to your goal.</p>
+                <p className=' text-3xl pt-8 font-bold'>Learn Piano efficiently, to make your goal come true.</p>
                 <br />
-                <p className='text-3xl '> Don't miss enrol in our Class.</p>
+                <p className='text-3xl font-bold'> Don't miss, Enrol in our Class.</p>
             </div>
 
             <div className='img2'>
-                <p className=' text-3xl pt-8'>Learn Piano efficiently, that will take you to your goal.</p>
+                <p className=' text-3xl pt-8 font-bold'>Learn DJ efficiently, to make your goal come true.</p>
                 <br />
-                <p className='text-3xl '> Don't miss enrol in our Class.</p>
+                <p className='text-3xl font-bold'> Don't miss, Enrol in our Class.</p>
 
             </div>
 
             <div className='img3'>
-                <p className=' text-3xl pt-8'>Learn Piano efficiently, that will take you to your goal.</p>
+                <p className=' text-3xl pt-8 font-bold'>Learn Guitar efficiently, to make your goal come true.</p>
                 <br />
-                <p className='text-3xl '> Don't miss enrol in our Class.</p>
+                <p className='text-3xl font-bold'> Don't miss, Enrol in our Class.</p>
             </div>
 
             <div className='img4'>
-                <p className=' text-3xl pt-8'>Learn Piano efficiently, that will take you to your goal.</p>
+                <p className=' text-3xl pt-8 font-bold'>Learn Dram efficiently, to make your goal come true.</p>
                 <br />
-                <p className='text-3xl '> Don't miss enrol in our Class.</p>
+                <p className='text-3xl font-bold'> Don't miss, Enrol in our Class.</p>
             </div>
         </Carousel>
     );

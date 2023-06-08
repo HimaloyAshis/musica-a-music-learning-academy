@@ -12,6 +12,8 @@ const Navbar = () => {
                 <Link>Home</Link>
                 <Link>Instructors</Link>
                 <Link>Dashboard</Link>
+                <Link to={'/class'}>Class</Link>
+                <Link to={'/instructors'}>Instructors</Link>
             </div>
             <div>
                 <FaUserCircle/>
