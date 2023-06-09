@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 
 const SignUp = () => {
+    const [error, setError] = useState()
 
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
+    const onSubmit = data => {
+        console.log(data.name, data.email , data.photo, data.password, data.confirmPassword)
+        if(data.password !== data.confirmPassword){
+           setError(<span className='text-orange-400'>Confirm Passwords not matched</span>)
+           return
+        }
+    };
 
     return (
         <div className="hero min-h-screen bg-base-200 py-5">
@@ -57,7 +64,8 @@ const SignUp = () => {
                                 <span className="label-text">Confirm Password</span>
                             </label>
                             <input type="password" {...register("confirmPassword", { required: true })} placeholder="password" className="input input-bordered" />
-                            {errors.confirmPassword && <span className='text-orange-400'>ConfirmPasswords is required</span>}
+                            {errors.confirmPassword && <span className='text-orange-400'>Confirm Passwords is required</span>}
+                            <span className='text-orange-400'>{error}</span>
                             
                         </div>
                         <div className="form-control mt-6">

@@ -6,7 +6,9 @@ const Login = () => {
 
 
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
+    const onSubmit = data => {
+        console.log(data.email, data.password)
+    };
 
     return (
         <div className="hero min-h-screen bg-base-200">
