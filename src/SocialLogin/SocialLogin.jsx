@@ -2,6 +2,7 @@ import React from 'react';
 import useAuth from '../Hook/useAuth';
 import { FaGoogle } from 'react-icons/fa';
 import SaveUser from '../api/SaveUser';
+import { toast } from 'react-toastify';
 
 const SocialLogin = () => {
     const { gProvider } = useAuth()
@@ -10,8 +11,9 @@ const SocialLogin = () => {
         gProvider()
         .then(result=>{
             SaveUser(result.user)
+            toast.success('Sign In successfully')
         })
-        .catch(error=>console.log(error.message))
+        .catch(error=>toast.error(error.message))
     }
 
     return (

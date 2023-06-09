@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import SaveUser from '../../api/SaveUser';
 import useAuth from '../../Hook/useAuth';
+import { toast } from 'react-toastify';
 
 const SignUp = () => {
     const [error, setError] = useState()
@@ -15,16 +16,18 @@ const SignUp = () => {
             setError(<span className='text-orange-400'>Confirm Passwords not matched</span>)
             return
         }
-        createUser()
+        createUser(data.email, data.password)
             .then(result => {
                 updateUser(data.name, data.photo)
                     .then(() => {
 
                         SaveUser(result.user)
+                        toast.success('LoggedIn successfully')
                     })
-                    .catch(error=>console.log())
+                    .catch(error=>toast(error.message))
 
             })
+            .catch(error=>toast.error(error.message))
     };
 
     return (
