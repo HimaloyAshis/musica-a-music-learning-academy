@@ -19,34 +19,36 @@ const SignUp = () => {
                             <label className="label">
                                 <span className="label-text">Name</span>
                             </label>
-                            <input type="text"  {...register("name")} placeholder="email" className="input input-bordered" />
+                            <input type="text"  {...register("name",{ required: true })} placeholder="email" className="input input-bordered" />
+                            {errors.name && <span className='text-orange-400'>Name is required</span>}
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Email</span>
                             </label>
-                            <input type="email"  {...register("email")} placeholder="email" className="input input-bordered" />
+                            <input type="email"  {...register("email", { required: true })} placeholder="email" className="input input-bordered" />
+                            {errors.email && <span className='text-orange-400'>email is required</span>}
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Email</span>
                             </label>
-                            <input type="URL" {...register("photo")} placeholder="email" className="input input-bordered" />
+                            <input type="URL" {...register("photo", { required: true })} placeholder="email" className="input input-bordered" />
+                            {errors.photo && <span className='text-orange-400'>photo URL is required</span>}
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input type="password" {...register("password")} placeholder="password" className="input input-bordered" />
-                            <label className="label">
-                                <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                            </label>
+                            <input type="password" {...register("password", { required: true })} placeholder="password" className="input input-bordered" />
+                            {errors.password && <span className='text-orange-400'>Password is required</span>}
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input type="password" {...register("password")} placeholder="password" className="input input-bordered" />
+                            <input type="password" {...register("confirmPassword", { required: true })} placeholder="password" className="input input-bordered" />
+                            {errors.confirmPassword && <span className='text-orange-400'>ConfirmPasswords is required</span>}
                             
                         </div>
                         <div className="form-control mt-6">
