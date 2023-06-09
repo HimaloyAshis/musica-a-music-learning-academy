@@ -1,5 +1,7 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
+import { FaHome, FaPlus } from 'react-icons/fa';
+import { Link, Outlet } from 'react-router-dom';
+import './Dashboard.css'
 
 const Dashboard = () => {
     return (
@@ -12,10 +14,10 @@ const Dashboard = () => {
             </div>
             <div className="drawer-side">
                 <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-                <ul className="menu p-4 w-80 h-full bg-base-200 text-base-content">
+                <ul className="menu p-4 w-80 h-full bg-[#FFCDA8] ">
                     {/* Sidebar content here */}
-                    <li><a>Sidebar Item 1</a></li>
-                    <li><a>Sidebar Item 2</a></li>
+                    <li><Link><FaHome></FaHome> Instructor Home</Link></li>
+                    <li><Link to={'/dashboard/instructors'}><FaPlus></FaPlus> Add class</Link></li>
                 </ul>
 
             </div>
