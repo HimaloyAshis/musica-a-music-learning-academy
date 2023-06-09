@@ -1,10 +1,12 @@
 import axios from 'axios';
 import React from 'react';
 import { useQuery } from 'react-query';
+import useAllUser from '../../../Hook/useAllUser';
 
 const AllUser = () => {
 
-   
+   const [allUser] = useAllUser()
+   console.log(allUser)
     
     return (
         <div className="overflow-x-auto">
