@@ -55,6 +55,7 @@ const Login = () => {
                     <div className='p-3'>
                         <span>Don't have an account ? please <Link to={'/signUp'} className='text-[#FFAAC9]'>Sign Up</Link></span>
                     </div>
+                    
                 </div>
             </div>
         </div>

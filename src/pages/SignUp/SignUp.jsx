@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import SaveUser from '../../api/SaveUser';
 import useAuth from '../../Hook/useAuth';
 import { toast } from 'react-toastify';
@@ -8,6 +8,10 @@ import { toast } from 'react-toastify';
 const SignUp = () => {
     const [error, setError] = useState()
     const { createUser, updateUser } = useAuth()
+    const location = useLocation()
+    const navigate = useNavigate()
+
+    const from = location.state.from.pathname || '/'
 
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit = data => {
@@ -23,6 +27,7 @@ const SignUp = () => {
 
                         SaveUser(result.user)
                         toast.success('LoggedIn successfully')
+                        navigate(from, {replace:true})
                     })
                     .catch(error=>toast(error.message))
 
