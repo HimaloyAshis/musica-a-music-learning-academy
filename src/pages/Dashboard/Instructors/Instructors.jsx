@@ -1,6 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import useAuth from '../../../Hook/useAuth';
+import { addClasses } from '../../../api/AddClass';
 
 const Instructors = () => {
 
@@ -8,6 +9,7 @@ const Instructors = () => {
 
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
+        addClasses(data)
         console.log(data)
     };
 

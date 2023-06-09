@@ -24,10 +24,10 @@ const Navbar = () => {
             <div className='flex gap-3'>
                 <Link>Home</Link>
                 <Link>Instructors</Link>
-                <Link>Dashboard</Link>
+                <Link to={'/dashboard/instructors'}>Dashboard</Link>
                 <button onClick={handleLogout}>Logout</button>
                 <Link to={'/class'}>Class</Link>
-                <Link to={'/instructors'}>Instructors</Link>
+                <Link >Instructors</Link>
             </div>
             <div>
                 <FaUserCircle/>
