@@ -4,6 +4,10 @@ import { Link, Outlet } from 'react-router-dom';
 import './Dashboard.css'
 
 const Dashboard = () => {
+
+
+    const isAdmin = true
+
     return (
         <div className="drawer lg:drawer-open">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -16,9 +20,28 @@ const Dashboard = () => {
                 <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                 <ul className="menu p-4 w-80 h-full bg-[#FFCDA8] ">
                     {/* Sidebar content here */}
-                    <li><Link to={'/'}><FaHome></FaHome> Instructor Home</Link></li>
-                    <li><Link to={'/dashboard/instructors'}><FaPlus></FaPlus> Add class</Link></li>
-                    <li><Link><FaStoreAlt></FaStoreAlt> My class</Link></li>
+                    {
+                        isAdmin ?
+                            <>
+                                <li><Link to={'/'}><FaHome></FaHome> Admin Home</Link></li>
+                                <li><Link to={'/dashboard/allUser'}><FaStoreAlt></FaStoreAlt> All users</Link></li>
+                                <li><Link to={'/dashboard/allClass'}><FaStoreAlt></FaStoreAlt> All class</Link></li>
+                                <div className="divider">OR</div>
+                                <li><Link><FaHome></FaHome> User Home</Link></li>
+                                <li><Link><FaHome></FaHome> User Home</Link></li>
+                                <li><Link><FaHome></FaHome> User Home</Link></li>
+                            </>
+                            :
+                            <>
+                                <li><Link to={'/'}><FaHome></FaHome> Instructor Home</Link></li>
+                                <li><Link to={'/dashboard/instructors'}><FaPlus></FaPlus> Add class</Link></li>
+                                <li><Link><FaStoreAlt></FaStoreAlt> My class</Link></li>
+                                <div className="divider">OR</div>
+                                <li><Link><FaHome></FaHome> User Home</Link></li>
+                                <li><Link><FaHome></FaHome> User Home</Link></li>
+                                <li><Link><FaHome></FaHome> User Home</Link></li>
+                            </>
+                    }
                 </ul>
 
             </div>
