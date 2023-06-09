@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import SaveUser from '../../api/SaveUser';
 import useAuth from '../../Hook/useAuth';
 import { ToastContainer, toast } from 'react-toastify';
+import SocialLogin from '../../SocialLogin/SocialLogin';
 
 const SignUp = () => {
     const [error, setError] = useState()
@@ -91,12 +92,13 @@ const SignUp = () => {
 
                         </div>
                         <div className="form-control mt-6">
-                            <input className="btn bg-[#C2DEDC]" type="submit" value="Login" />
+                            <input className="btn bg-[#C2DEDC]" type="submit" value="SignUp" />
                         </div>
                     </form>
                     <div className='p-3'>
-                        <span>Already have an account ? please <Link to={'/login'} className='text-[#FFAAC9]'>Login</Link></span>
+                        <span>Already have an account ? please <Link to={'/login'} className='text-[#d47598]'>Login</Link></span>
                     </div>
+                    <SocialLogin></SocialLogin>
                 </div>
             </div>
         </div>

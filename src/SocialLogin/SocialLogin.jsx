@@ -10,21 +10,22 @@ const SocialLogin = () => {
     const location = useLocation()
     const navigate = useNavigate()
 
-    const from = location.state.from.pathname || '/'
+    const from = location.state?.from?.pathname || '/'
 
     const handleGoogle = ()=>{
         gProvider()
         .then(result=>{
             SaveUser(result.user)
+            navigate(from, {replace:true})
             toast.success('Sign In successfully')
         })
         .catch(error=>toast.error(error.message))
     }
 
     return (
-        <div>
+        <div className='text-center py-4'>
             <div className="divider">OR</div>
-            <button onClick={handleGoogle} className="btn btn-circle">
+            <button onClick={handleGoogle} className="btn bg-[#83764F] btn-circle">
                <FaGoogle></FaGoogle>
             </button>
         </div>

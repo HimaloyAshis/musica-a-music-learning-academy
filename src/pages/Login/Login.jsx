@@ -2,7 +2,8 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import useAuth from '../../Hook/useAuth';
-import { toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
+import SocialLogin from '../../SocialLogin/SocialLogin';
 
 const Login = () => {
 
@@ -28,6 +29,7 @@ const Login = () => {
 
     return (
         <div className="hero min-h-screen bg-base-200">
+            <ToastContainer></ToastContainer>
             <div className="hero-content flex-col lg:flex">
                 <div className="text-center lg:text-center">
                     <h1 className="text-5xl font-bold">Login now!</h1>
@@ -53,9 +55,9 @@ const Login = () => {
                         </div>
                     </form>
                     <div className='p-3'>
-                        <span>Don't have an account ? please <Link to={'/signUp'} className='text-[#FFAAC9]'>Sign Up</Link></span>
+                        <span>Don't have an account ? please <Link to={'/signUp'} className='text-[#da769b]'>Sign Up</Link></span>
                     </div>
-
+                    <SocialLogin></SocialLogin>
                 </div>
             </div>
         </div>

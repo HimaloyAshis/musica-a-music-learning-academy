@@ -13,7 +13,7 @@ const SaveUser = user => {
         body:JSON.stringify(currentUser)
     })
     .then(res=>res.json())
-    .then(data=>data)
+    .then(data=>console.log(data))
 };
 
 export default SaveUser;
