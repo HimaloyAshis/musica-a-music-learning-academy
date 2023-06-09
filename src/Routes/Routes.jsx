@@ -3,11 +3,11 @@ import Home from "../pages/Home/Home";
 import Main from "../LayOut/Main";
 import ErrorElement from "../pages/ErrorElement/ErrorElement";
 import Class from "../pages/ClassPage/Class";
-import Instructors from "../pages/Instructors/Instructors";
 import Login from "../pages/Login/Login";
 import SignUp from "../pages/SignUp/SignUp";
 import Dashboard from "../LayOut/Dashboard/Dashboard";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
+import Instructors from "../pages/Dashboard/Instructors/Instructors";
 
 const router = createBrowserRouter([
     {
@@ -44,8 +44,8 @@ const router = createBrowserRouter([
         errorElement:<ErrorElement></ErrorElement>,
         children:[
             {
-                path:'',
-                element:''
+                path:'instructors',
+                element:<Instructors></Instructors>
             }
         ]
     }
