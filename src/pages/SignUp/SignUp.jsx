@@ -1,5 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { Link } from 'react-router-dom';
 
 const SignUp = () => {
 
@@ -7,11 +8,11 @@ const SignUp = () => {
     const onSubmit = data => console.log(data);
 
     return (
-        <div className="hero min-h-screen bg-base-200">
-            <div className="hero-content flex-col lg:flex-row-reverse">
-                <div className="text-center lg:text-left">
-                    <h1 className="text-5xl font-bold">Login now!</h1>
-                    <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+        <div className="hero min-h-screen bg-base-200 py-5">
+            <div className="hero-content flex-col lg:flex">
+                <div className="text-center lg:text-center">
+                    <h1 className="text-5xl font-bold">Sign Up now!</h1>
+                    
                 </div>
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                     <form onSubmit={handleSubmit(onSubmit)} className="card-body">
@@ -19,7 +20,7 @@ const SignUp = () => {
                             <label className="label">
                                 <span className="label-text">Name</span>
                             </label>
-                            <input type="text"  {...register("name",{ required: true })} placeholder="email" className="input input-bordered" />
+                            <input type="text"  {...register("name",{ required: true })} placeholder="Name" className="input input-bordered" />
                             {errors.name && <span className='text-orange-400'>Name is required</span>}
                         </div>
                         <div className="form-control">
@@ -31,30 +32,41 @@ const SignUp = () => {
                         </div>
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text">Email</span>
+                                <span className="label-text">Photo URL</span>
                             </label>
-                            <input type="URL" {...register("photo", { required: true })} placeholder="email" className="input input-bordered" />
+                            <input type="URL" {...register("photo", { required: true })} placeholder="Photo URL" className="input input-bordered" />
                             {errors.photo && <span className='text-orange-400'>photo URL is required</span>}
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input type="password" {...register("password", { required: true })} placeholder="password" className="input input-bordered" />
-                            {errors.password && <span className='text-orange-400'>Password is required</span>}
+                            <input type="password" {...register("password", { 
+                                required: true,
+                                minLength:6, 
+                                 maxLength:10,
+                                 pattern:/(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z])/
+                             })} placeholder="password" className="input input-bordered" />
+                            {errors.password?.type==='required' && <span className='text-orange-400'>Password is required</span>}
+                            {errors.password?.type==='minLength' && <span className='text-orange-400'>Password length will be more than 6 character</span>}
+                            {errors.password?.type==='maxLength' && <span className='text-orange-400'>Password length will be less than 10 character</span>}
+                            {errors.password?.type==='pattern' && <span className='text-orange-400'>Password must have one uppercase , one lowercase and one special character</span>}
                         </div>
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text">Password</span>
+                                <span className="label-text">Confirm Password</span>
                             </label>
                             <input type="password" {...register("confirmPassword", { required: true })} placeholder="password" className="input input-bordered" />
                             {errors.confirmPassword && <span className='text-orange-400'>ConfirmPasswords is required</span>}
                             
                         </div>
                         <div className="form-control mt-6">
-                            <input className="btn btn-primary" type="submit" value="Login" />
+                            <input className="btn bg-[#C2DEDC]" type="submit" value="Login" />
                         </div>
                     </form>
+                    <div className='p-3'>
+                        <span>Already have an account ? please <Link to={'/login'} className='text-[#FFAAC9]'>Login</Link></span>
+                    </div>
                 </div>
             </div>
         </div>
