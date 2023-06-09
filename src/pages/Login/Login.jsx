@@ -10,7 +10,7 @@ const Login = () => {
     const location = useLocation()
     const navigate = useNavigate()
 
-    const from = location.state.from.pathname || '/'
+    const from = location.state?.from?.pathname || '/'
 
 
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
@@ -55,7 +55,7 @@ const Login = () => {
                     <div className='p-3'>
                         <span>Don't have an account ? please <Link to={'/signUp'} className='text-[#FFAAC9]'>Sign Up</Link></span>
                     </div>
-                    
+
                 </div>
             </div>
         </div>

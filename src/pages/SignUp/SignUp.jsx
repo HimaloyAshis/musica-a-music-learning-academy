@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import SaveUser from '../../api/SaveUser';
 import useAuth from '../../Hook/useAuth';
-import { toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
 
 const SignUp = () => {
     const [error, setError] = useState()
@@ -11,7 +11,7 @@ const SignUp = () => {
     const location = useLocation()
     const navigate = useNavigate()
 
-    const from = location.state.from.pathname || '/'
+    const from = location.state?.from?.pathname || '/'
 
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit = data => {
@@ -37,6 +37,7 @@ const SignUp = () => {
 
     return (
         <div className="hero min-h-screen bg-base-200 py-5">
+            <ToastContainer></ToastContainer>
             <div className="hero-content flex-col lg:flex">
                 <div className="text-center lg:text-center">
                     <h1 className="text-5xl font-bold">Sign Up now!</h1>
