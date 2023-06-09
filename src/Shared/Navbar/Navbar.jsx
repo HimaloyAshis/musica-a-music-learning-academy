@@ -22,12 +22,13 @@ const Navbar = () => {
                 <h1>Musica Academy</h1>
             </div>
             <div className='flex gap-3'>
-                <Link>Home</Link>
-                <Link>Instructors</Link>
-                <Link to={'/dashboard/instructors'}>Dashboard</Link>
-                <button onClick={handleLogout}>Logout</button>
-                <Link to={'/class'}>Class</Link>
-                <Link >Instructors</Link>
+                <Link className='butn'>Home</Link>
+                <Link className='butn'>Instructors</Link>
+                <Link className='butn' to={'/dashboard/instructors'}>Dashboard</Link>
+                <Link className='butn' onClick={handleLogout}>Logout</Link>
+                <Link className='butn' to={'/class'}>Class</Link>
+                <Link className='butn' >Instructors</Link>
+                <Link className='butn' to={'/login'}>Login</Link>
             </div>
             <div>
                 <FaUserCircle/>

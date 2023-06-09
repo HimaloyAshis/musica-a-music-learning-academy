@@ -27,13 +27,13 @@ const SignUp = () => {
                     .then(() => {
 
                         SaveUser(result.user)
-                        toast.success('LoggedIn successfully')
+                        toast('LoggedIn successfully')
                         navigate(from, {replace:true})
                     })
                     .catch(error=>toast(error.message))
 
             })
-            .catch(error=>toast.error(error.message))
+            .catch(error=>toast(error.message))
     };
 
     return (
@@ -88,7 +88,7 @@ const SignUp = () => {
                             </label>
                             <input type="password" {...register("confirmPassword", { required: true })} placeholder="password" className="input input-bordered" />
                             {errors.confirmPassword && <span className='text-orange-400'>Confirm Passwords is required</span>}
-                            <span className='text-orange-400'>{error}</span>
+                            
 
                         </div>
                         <div className="form-control mt-6">
@@ -97,6 +97,7 @@ const SignUp = () => {
                     </form>
                     <div className='p-3'>
                         <span>Already have an account ? please <Link to={'/login'} className='text-[#d47598]'>Login</Link></span>
+                    
                     </div>
                     <SocialLogin></SocialLogin>
                 </div>
