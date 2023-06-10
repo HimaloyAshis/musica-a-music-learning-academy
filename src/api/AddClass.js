@@ -2,10 +2,10 @@ import { data } from "autoprefixer"
 import axios from "axios"
 
 export const addClasses =  classes =>{
-     axios.post(`${import.meta.env.Vite_API_URL}/class`,classes)
+     axios.post(`http://localhost:5000/class`,classes)
      .then(data=>{
 
-         console.log(data)
+         console.log(data.data)
      })
 
      
