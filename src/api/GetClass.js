@@ -5,7 +5,7 @@ import { useQuery } from 'react-query';
 const GetClass = () => {
     const [axiosSecure] = useAxiosSecure()
 
-    const {data : AllClasses , refetch } = useQuery({
+    const {data : AllClass , refetch } = useQuery({
         queryKey:['class'],
         queryFn: async ()=>{
             const res = await axiosSecure.get('/class')
@@ -15,7 +15,7 @@ const GetClass = () => {
     })
 
 
-    return  [AllClasses, refetch]
+    return  [AllClass, refetch]
 };
 
 export default GetClass;
