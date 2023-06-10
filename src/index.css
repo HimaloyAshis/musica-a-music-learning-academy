@@ -12,5 +12,5 @@
 }
 
 .butn{
-    @apply bg-[#C38154] text-white font-semibold px-2 py-2 rounded hover:bg-[#635044]
+    @apply bg-[#C38154] text-white font-semibold px-2 py-2 items-center rounded hover:bg-[#635044]
 }
