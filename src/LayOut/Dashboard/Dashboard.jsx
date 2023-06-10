@@ -2,11 +2,18 @@ import React from 'react';
 import { FaHome, FaPlus, FaStoreAlt } from 'react-icons/fa';
 import { Link, Outlet } from 'react-router-dom';
 import './Dashboard.css'
+import useAdmin from '../../Hook/useAdmin';
 
 const Dashboard = () => {
 
 
-    const isAdmin = false
+    const [isAdmin] = useAdmin()
+    console.log(isAdmin)
+    // const isAdmin = true
+
+//     {isAdmin && <AdminDashboard/>}
+// {isInstructor && <InstructorDashboard/>}
+// {isStudent && <StudentDashboard/>}
 
     return (
         <div className="drawer lg:drawer-open">
@@ -42,6 +49,8 @@ const Dashboard = () => {
                                 <li><Link><FaHome></FaHome> User Home</Link></li>
                             </>
                     }
+
+                    
                 </ul>
 
             </div>
