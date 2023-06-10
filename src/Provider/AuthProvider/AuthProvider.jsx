@@ -1,59 +1,72 @@
 import React, { createContext, useEffect, useState } from 'react';
 import app from '../../Firebase/Firebase';
 import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
+import axios from 'axios';
 
 
 export const AuthContext = createContext(null)
 
 const auth = getAuth(app)
 
-const AuthProvider = ({children}) => {
-    
+const AuthProvider = ({ children }) => {
+
     const [user, setUser] = useState()
-    const [loading , setLoading]  = useState(true)
+    const [loading, setLoading] = useState(true)
 
     const googleProvider = new GoogleAuthProvider()
 
-    const createUser =(email, password)=>{
+    const createUser = (email, password) => {
         setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password)
     }
 
-    const signInUser = (email, password)=>{
+    const signInUser = (email, password) => {
         setLoading(true)
         return signInWithEmailAndPassword(auth, email, password)
     }
 
-    const updateUser =(name, url)=>{
+    const updateUser = (name, url) => {
         setLoading(true)
         return updateProfile(auth.currentUser, {
-            displayName:name, photoURL: url
-          })
+            displayName: name, photoURL: url
+        })
     }
 
-    const logOut = ()=>{
+    const logOut = () => {
         setLoading(true)
         return signOut(auth)
     }
 
-    const gProvider =()=>{
-            setLoading(true)
-            return signInWithPopup(auth, googleProvider)
+    const gProvider = () => {
+        setLoading(true)
+        return signInWithPopup(auth, googleProvider)
     }
 
-    useEffect(()=>{
-       const unSubscribe =  onAuthStateChanged(auth, currentUser =>{
-             setUser(currentUser)
-             setLoading(false)
-             console.log('Here is current User', currentUser)
+    useEffect(() => {
+        const unSubscribe = onAuthStateChanged(auth, currentUser => {
+            setUser(currentUser)
+            setLoading(false)
+            console.log('Here is current User', currentUser)
+            if (currentUser) {
+                const user = { email: currentUser?.email }
+                axios.post('http://localhost:5000/jwt', { user })
+                    .then(data => {
+                        localStorage.setItem('user_secret', data.data.token)
+                        setLoading(false)
+                        console.log(data.data)
+                    })
+            }
+            else {
+                localStorage.removeItem("user_secret")
+            }
         })
 
-        return ()=>{
+        return () => {
             return unSubscribe()
         }
-    },[])
+    }, [])
 
-    
+
 
 
     const userInfo = {
