@@ -1,5 +1,7 @@
 import React from 'react';
 import GetClass from '../../../api/GetClass';
+import AllclassTa from './AllclassTa';
+import { ToastContainer } from 'react-toastify';
 
 const AllClasses = () => {
     const [AllClass] = GetClass()
@@ -7,8 +9,33 @@ const AllClasses = () => {
 
 
     return (
-        <div>
-            <h1>Here is All class </h1>
+        <div className="overflow-x-auto">
+            <ToastContainer></ToastContainer>
+            <table className="table">
+                {/* head */}
+                <thead>
+                    <tr>
+                        <th>
+                           #
+                        </th>
+                        <th>Picture</th>
+                        <th>class Name</th>
+                        <th>Instructor name</th>
+                        <th>Instructor email</th>
+                        <th>Available seats</th>
+                        <th>Price </th>
+                        <th>Status </th>
+                        <th>Action </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {
+                        AllClass?.map((cls, index)=> <AllclassTa key={cls._id} AllClass={cls} index={index}></AllclassTa>)
+                    }
+                    
+                </tbody>
+            </table>
         </div>
     );
 };
