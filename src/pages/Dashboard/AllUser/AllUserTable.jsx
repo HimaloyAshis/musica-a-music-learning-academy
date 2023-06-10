@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import useAuth from '../../../Hook/useAuth';
-import { MakeAdmin } from '../../../api/SaveUser';
+import { MakeAdmin, MakeInstructor } from '../../../api/SaveUser';
 
 const AllUserTable = ({users, index}) => {
+
+    // const [disabled , setDisabled] = useState
 
     const {user} = useAuth()
 
@@ -10,9 +12,13 @@ const AllUserTable = ({users, index}) => {
         MakeAdmin(user)
     }
 
-    const Instructor = ()=>{
-        
+    const Instructor = (user)=>{
+        MakeInstructor(user)
     }
+
+    // if(users.role==='Admin' || users.role=== 'Instructor'){
+    //     return 
+    // }
 
     return (
         <tr>
@@ -32,10 +38,14 @@ const AllUserTable = ({users, index}) => {
                 {users.name}
             </td>
             <td>
-                <button onClick={()=>Admin(users)} className="btn btn-ghost butn btn-xs">Make Admin</button>
+                <button 
+                disabled={users.role==='Admin' }
+                onClick={()=>Admin(users)} 
+                className="btn btn-ghost butn btn-xs"
+                >Make Admin</button>
             </td>
             <th>
-                <button onClick={()=>Instructor(users)} className="btn btn-ghost butn btn-xs">Make Instructors</button>
+                <button disabled={users.role=== 'Instructor'} onClick={()=>Instructor(users)} className="btn btn-ghost butn btn-xs">Make Instructors</button>
             </th>
         </tr>
     );

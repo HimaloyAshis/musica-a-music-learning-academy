@@ -6,7 +6,7 @@ import './Dashboard.css'
 const Dashboard = () => {
 
 
-    const isAdmin = true
+    const isAdmin = false
 
     return (
         <div className="drawer lg:drawer-open">
