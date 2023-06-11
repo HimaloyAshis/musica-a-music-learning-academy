@@ -5,6 +5,7 @@ import SaveUser from '../../api/SaveUser';
 import useAuth from '../../Hook/useAuth';
 import { ToastContainer, toast } from 'react-toastify';
 import SocialLogin from '../../SocialLogin/SocialLogin';
+import 'react-toastify/dist/ReactToastify.css';
 
 const SignUp = () => {
     const [error, setError] = useState()

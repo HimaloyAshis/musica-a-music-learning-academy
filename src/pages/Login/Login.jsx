@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import useAuth from '../../Hook/useAuth';
 import { ToastContainer, toast } from 'react-toastify';
 import SocialLogin from '../../SocialLogin/SocialLogin';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
 

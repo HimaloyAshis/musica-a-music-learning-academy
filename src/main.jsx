@@ -5,6 +5,7 @@ import { RouterProvider } from 'react-router-dom'
 import router from './Routes/Routes.jsx'
 import AuthProvider from './Provider/AuthProvider/AuthProvider'
 import {  QueryClient, QueryClientProvider } from 'react-query'
+import 'react-toastify/dist/ReactToastify.css';
 
 const queryClient = new QueryClient()
 
