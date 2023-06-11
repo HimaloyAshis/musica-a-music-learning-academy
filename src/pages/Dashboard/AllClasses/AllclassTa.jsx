@@ -28,7 +28,7 @@ const AllclassTa = ({ AllClass, index }) => {
             status: 'Deny'
         };
 
-        axios.patch(`http://localhost:5000/${id}`, info)
+        axios.patch(`http://localhost:5000/allClass/${id}`, info)
             .then(data => {
                 console.log(data.data);
                 if (data.data.modifiedCount > 0) {
@@ -65,12 +65,12 @@ const AllclassTa = ({ AllClass, index }) => {
                 <td>{AllClass.Instructor_Name}</td>
                 <td>{AllClass.Instructor_Email}</td>
                 <td>{AllClass.seats}</td>
-                <td>{AllClass.price}</td>
+                <td>${AllClass.price}</td>
                 <td>{AllClass.status}</td>
                 <th>
                     <div className='py-2'>
-                        <button onClick={() => handleApprove(AllClass._id)} className="btn btn-ghost bg-[#9BA4B5] btn-xs">Approve</button>
-                        <button onClick={() => handleDeny(AllClass._id)} className="btn btn-ghost my-2 bg-[#9BA4B5] btn-xs">Deny</button>
+                        <button disabled={AllClass.status==='Approve'} onClick={() => handleApprove(AllClass._id)} className="btn btn-ghost bg-[#9BA4B5] btn-xs">Approve</button>
+                        <button disabled={AllClass.status==='Approve'} onClick={() => handleDeny(AllClass._id)} className="btn btn-ghost my-2 bg-[#9BA4B5] btn-xs">Deny</button>
                         <button onClick={() => handleFeedBack(AllClass._id,)} className="btn btn-ghost bg-[#9BA4B5] btn-xs">Feedback</button>
                     </div>
                 </th>

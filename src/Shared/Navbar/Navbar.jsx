@@ -23,11 +23,10 @@ const Navbar = () => {
             </div>
             <div className='flex gap-3'>
                 <Link className='butn'>Home</Link>
-                <Link className='butn'>Instructors</Link>
+                <Link to={'/instructors'} className='butn'>Instructors</Link>
                 <Link className='butn' to={'/dashboard/instructors'}>Dashboard</Link>
                 <Link className='butn' onClick={handleLogout}>Logout</Link>
                 <Link className='butn' to={'/class'}>Class</Link>
-                <Link className='butn' >Instructors</Link>
                 <Link className='butn' to={'/login'}>Login</Link>
             </div>
             <div>
