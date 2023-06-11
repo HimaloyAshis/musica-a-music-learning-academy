@@ -3,33 +3,57 @@ import { parse } from 'postcss';
 import React from 'react';
 import { toast } from 'react-toastify';
 import useAuth from '../../Hook/useAuth';
+import { useLocation, useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2'
 
-const ClassCard = ({classes}) => {
+const ClassCard = ({ classes }) => {
 
-    const {user} = useAuth()
+    const { user } = useAuth()
+    const navigate = useNavigate()
+    const location = useLocation()
 
-    const {class_Image,class_Name,price,Instructor_Name,availableSeats,allSeat, booked,} = classes
-
+    const { class_Image, class_Name, price, Instructor_Name, availableSeats, allSeat, booked, } = classes
 
     let availAbleSeat = booked || 0
-    const handleAvailableSeats = (id) =>{
+    const handleAvailableSeats = (id) => {
 
-        const availAbleSeats ={
-           
-            availableSeats: parseInt(availableSeats) -1,
-            booked: availAbleSeat +1
+
+        if (user && user?.email) {
+            const availAbleSeats = {
+
+                availableSeats: parseInt(availableSeats) - 1,
+                booked: availAbleSeat + 1
+            }
+
+            axios.put(`http://localhost:5000/selected/class/${id}`, availAbleSeats)
+                .then(data => {
+                    console.log(data.data)
+                    toast('Your favorite class added')
+                })
+                .catch(error => toast(error.message))
+            
+                
+        }
+        else {
+            Swal.fire({
+                title: 'Please Login to order the food',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Login now!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+
+                    navigate('/login', { state: { from: location } })
+                }
+            })
         }
 
 
-        axios.put(`http://localhost:5000/selected/class/${id}`,availAbleSeats)
-        .then(data=>{
-            console.log(data.data)
-            toast('Your favorite class added')
-        })
-        .catch(error=>toast(error.message))
-
-        
     }
+
 
 
     return (
@@ -43,7 +67,7 @@ const ClassCard = ({classes}) => {
                 <p>AvailableSeats: {availableSeats}</p>
                 <p>price: $ {price}</p>
                 <div className="card-actions">
-                    <button onClick={()=>handleAvailableSeats(classes._id)} className="btn  bg-[#829797]">Select Class</button>
+                    <button onClick={() => handleAvailableSeats(classes._id)} className="btn  bg-[#829797]">Select Class</button>
                 </div>
             </div>
         </div>
