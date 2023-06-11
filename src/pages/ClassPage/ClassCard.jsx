@@ -2,6 +2,13 @@ import React from 'react';
 
 const ClassCard = ({classes}) => {
     const {class_Image,class_Name,price,Instructor_Name,seats} = classes
+
+    const handleAvailableSeats = (id) =>{
+
+        
+    }
+
+
     return (
         <div className="card w-96 py-6 bg-[#EEE2DE] shadow-xl">
             <figure className="px-10 pt-10">
@@ -13,7 +20,7 @@ const ClassCard = ({classes}) => {
                 <p>Seats: {seats}</p>
                 <p>price: $ {price}</p>
                 <div className="card-actions">
-                    <button className="btn  bg-[#829797]">Select Class</button>
+                    <button onClick={()=>(classes._id)} className="btn  bg-[#829797]">Select Class</button>
                 </div>
             </div>
         </div>

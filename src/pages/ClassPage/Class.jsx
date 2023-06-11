@@ -1,8 +1,7 @@
 import React from 'react';
-import useAllUser from '../../Hook/useAllUser';
 import useAxiosSecure from '../../Hook/useAxiosSecure';
 import { useQuery } from 'react-query';
-import InstructorCard from '../InstructorPage/InstructorCard';
+
 import ClassCard from './ClassCard';
 import useAuth from '../../Hook/useAuth';
 
@@ -19,9 +18,15 @@ const Class = () => {
             // console.log(res.data)
             return res.data
         }
-    })
-
+        
+    
+    }) 
+        
     console.log(classes)
+
+    if (!classes) {
+        return <div>Loading...</div>; // or any other loading indicator
+      }
 
     return (
         <div>
