@@ -2,16 +2,19 @@ import React from 'react';
 import { useQuery } from 'react-query';
 import useAxiosSecure from '../../Hook/useAxiosSecure';
 import InstructorCard from './InstructorCard';
+import useAuth from '../../Hook/useAuth';
 
 const InstructorPage = () => {
+    const {loading}  = useAuth()
 
     const [axiosSecure] = useAxiosSecure()
 
     const { data: instructors } = useQuery({
-        queryKey: ['AllClass'],
+        queryKey: ['AllUser'],
+        enabled: !loading,
         queryFn: async () => {
-            const res = await axiosSecure.get('/class')
-            // console.log(res.data)
+            const res = await axiosSecure.get('/allUser')
+            console.log(res.data)
             return res.data
         }
     })

@@ -1,7 +1,7 @@
 import React from 'react';
 
-const InstructorCard = ({instructor}) => {
-    const {class_Image,class_Name,price,Instructor_Name,seats} = instructor
+const ClassCard = ({classes}) => {
+    const {class_Image,class_Name,price,Instructor_Name,seats} = classes
     return (
         <div className="card w-96 py-6 bg-[#EEE2DE] shadow-xl">
             <figure className="px-10 pt-10">
@@ -20,4 +20,4 @@ const InstructorCard = ({instructor}) => {
     );
 };
 
-export default InstructorCard;
+export default ClassCard;
