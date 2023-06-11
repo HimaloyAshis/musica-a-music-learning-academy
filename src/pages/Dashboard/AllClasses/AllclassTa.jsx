@@ -64,7 +64,7 @@ const AllclassTa = ({ AllClass, index }) => {
                 </td>
                 <td>{AllClass.Instructor_Name}</td>
                 <td>{AllClass.Instructor_Email}</td>
-                <td>{AllClass.seats}</td>
+                <td>{AllClass.availableSeats}</td>
                 <td>${AllClass.price}</td>
                 <td>{AllClass.status}</td>
                 <th>

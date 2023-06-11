@@ -26,7 +26,7 @@ const Instructors = () => {
 
             <input type="email" placeholder="email" className="input m-3 input-bordered input-accent w-full max-w-xs" defaultValue={user?.email} {...register("Instructor_Email")} />
 
-            <input type="number" placeholder="Available Seats" className="input m-3 input-bordered input-accent w-full max-w-xs" {...register("seats")} />
+            <input type="number" placeholder="Available Seats" className="input m-3 input-bordered input-accent w-full max-w-xs" {...register("availableSeats")} />
             <input type="number" placeholder="Price" className="input m-3 input-bordered input-accent w-full max-w-xs" {...register("price")} />
 
             <select type="text" placeholder="Type here" className="input m-3 input-bordered input-accent w-full max-w-lg" {...register("status")}>
