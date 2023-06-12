@@ -1,8 +1,23 @@
+import axios from 'axios';
 import React from 'react';
+import { toast } from 'react-toastify';
 
-const AllSelectClassDashCard = ({favClass , index}) => {
+const AllSelectClassDashCard = ({ favClass, index }) => {
 
-    const {class_Image,class_Name,price,} = favClass
+    const { class_Image, class_Name, price, _id } = favClass
+
+
+    const handleDelete = (id) => {
+        axios.delete(`http://localhost:5000/${id}`)
+            .then(data => {
+                if (data.data.deleteCount > 0){
+                    toast('')
+                }
+                    console.log(data.data)
+
+            })
+    }
+
 
     return (
         <tr>
@@ -19,11 +34,11 @@ const AllSelectClassDashCard = ({favClass , index}) => {
                 </div>
             </td>
             <td>
-               {class_Name}
+                {class_Name}
             </td>
             <td>${price}</td>
             <th>
-                <button className="btn butn btn-sm">Delete</button>
+                <button onClick={() => handleDelete(_id)} className="btn butn btn-sm">Delete</button>
             </th>
             <th>
                 <button className="btn butn btn-sm">Pay</button>
