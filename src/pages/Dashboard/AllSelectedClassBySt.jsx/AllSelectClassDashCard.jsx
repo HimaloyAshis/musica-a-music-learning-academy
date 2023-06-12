@@ -1,6 +1,9 @@
 import axios from 'axios';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const AllSelectClassDashCard = ({ favClass, index }) => {
 
@@ -11,7 +14,7 @@ const AllSelectClassDashCard = ({ favClass, index }) => {
         axios.delete(`http://localhost:5000/students/${id}`)
             .then(data => {
                 if (data.data.deleteCount > 0){
-                    toast('')
+                    toast('Your class deleted')
                 }
                     console.log(data.data)
 
@@ -41,7 +44,7 @@ const AllSelectClassDashCard = ({ favClass, index }) => {
                 <button onClick={() => handleDelete(_id)} className="btn butn btn-sm">Delete</button>
             </th>
             <th>
-                <button className="btn butn btn-sm">Pay</button>
+                <Link to={'/dashboard/payment'} className="btn butn btn-sm">Pay</Link>
             </th>
         </tr>
     );

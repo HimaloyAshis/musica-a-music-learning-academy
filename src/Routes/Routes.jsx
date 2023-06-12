@@ -1,4 +1,4 @@
-import { Router, createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import Home from "../pages/Home/Home";
 import Main from "../LayOut/Main";
 import ErrorElement from "../pages/ErrorElement/ErrorElement";
@@ -12,6 +12,7 @@ import AllUser from "../pages/Dashboard/AllUser/AllUser";
 import AllClasses from "../pages/Dashboard/AllClasses/AllClasses";
 import InstructorPage from "../pages/InstructorPage/InstructorPage";
 import AllSelectedClassySt from "../pages/Dashboard/AllSelectedClassBySt.jsx/AllSelectedClassySt";
+import Payment from "../pages/Dashboard/Payment/Payment";
 
 
 
@@ -65,6 +66,10 @@ const router = createBrowserRouter([
             {
                 path:'selectedClass',
                 element:<AllSelectedClassySt></AllSelectedClassySt>
+            },
+            {
+                path:'payment',
+                element:<Payment></Payment>
             }
         ]
     }
