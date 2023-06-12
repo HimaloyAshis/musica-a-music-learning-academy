@@ -12,7 +12,7 @@ const ClassCard = ({ classes }) => {
     const navigate = useNavigate()
     const location = useLocation()
 
-    const { class_Image, class_Name, price, Instructor_Name, availableSeats, allSeat, booked, } = classes
+    const { class_Image, class_Name, price, Instructor_Name, availableSeats, booked, } = classes
 
     let availAbleSeat = booked || 0
     const handleAvailableSeats = (id) => {
@@ -31,8 +31,26 @@ const ClassCard = ({ classes }) => {
                     toast('Your favorite class added')
                 })
                 .catch(error => toast(error.message))
-            
-                
+            const classInfo = {
+                class_Image,
+                class_Name,
+                Instructor_Name,
+                email:user?.email,
+                price
+            }
+
+            axios.post(`http://localhost:5000/students`, classInfo)
+                .then(data => {
+                    if (data.insertedId > 0) {
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'success',
+                            title: 'Your Favorite class selected',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    }
+                })
         }
         else {
             Swal.fire({

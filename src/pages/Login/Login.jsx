@@ -21,7 +21,7 @@ const Login = () => {
 
         signInUser(data.email, data.password)
         .then(result=>{
-            toast.success('LoggedIn successfully')
+            toast('LoggedIn successfully')
             navigate(from, {replace:true})
         })
         .catch(errors=> toast.error(errors.message))
