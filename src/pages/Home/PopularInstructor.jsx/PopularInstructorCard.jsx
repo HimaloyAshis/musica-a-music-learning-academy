@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const PopularInstructorCard = ({pop}) => {
 
     const {name, image} = pop
-    console.log(pop)
+    // console.log(pop)
 
     return (
         <div className="card w-96 bg-[#F6F1E9] shadow-xl">

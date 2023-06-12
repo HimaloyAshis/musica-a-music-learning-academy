@@ -11,7 +11,8 @@ import Instructors from "../pages/Dashboard/Instructors/Instructors";
 import AllUser from "../pages/Dashboard/AllUser/AllUser";
 import AllClasses from "../pages/Dashboard/AllClasses/AllClasses";
 import InstructorPage from "../pages/InstructorPage/InstructorPage";
-import AllStudents from "../pages/Dashboard/AllStudents/AllStudents";
+import AllSelectedClassySt from "../pages/Dashboard/AllSelectedClassBySt.jsx/AllSelectedClassySt";
+
 
 
 const router = createBrowserRouter([
@@ -63,7 +64,7 @@ const router = createBrowserRouter([
             },
             {
                 path:'students',
-                element:<AllStudents></AllStudents>
+                element:<AllSelectedClassySt></AllSelectedClassySt>
             }
         ]
     }
