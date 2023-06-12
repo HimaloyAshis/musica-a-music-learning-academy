@@ -4,7 +4,7 @@ import PopularSection from './PopularSection/PopularSection';
 
 const Home = () => {
     return (
-        <div>
+        <div className='bg-[#E5F9DB]'>
             <Slider></Slider>
             <PopularSection></PopularSection>
         </div>

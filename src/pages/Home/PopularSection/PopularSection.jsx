@@ -4,12 +4,11 @@ import { useQuery } from 'react-query';
 import PopularCard from './PopularCard';
 
 const PopularSection = () => {
-    const [popularClass, setPopularClass] = useState()
-    console.log(popularClass)
 
-    const {data: popular = []} = useQuery({
-        queryKey:['popular'],
-        queryFn: async()=>{
+
+    const { data: popular = [] } = useQuery({
+        queryKey: ['popular'],
+        queryFn: async () => {
             const res = await axios.get('http://localhost:5000/class/booked')
             return res.data
         }
@@ -17,10 +16,13 @@ const PopularSection = () => {
     console.log(popular)
 
     return (
-        <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4'>
-            {
-               popular.map(pop=><PopularCard key={pop._id} pop={pop}></PopularCard> )
-            }
+        <div>
+            <h1 className='font-extrabold text-4xl text-center text-[#]'>Here are the most trending class</h1>
+            <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4 py-6'>
+                {
+                    popular.map(pop => <PopularCard key={pop._id} pop={pop}></PopularCard>)
+                }
+            </div>
         </div>
     );
 };
