@@ -4,12 +4,14 @@ import './Dashboard.css'
 import useAdmin from '../../Hook/useAdmin';
 import AdminDashboard from './AdminDashboard';
 import InstructorDashboard from './InstructorDashboard';
+import AllSelectedClassySt from '../../pages/Dashboard/AllSelectedClassBySt.jsx/AllSelectedClassySt';
+import StudentDashboard from './StudentDashboard';
 
 const Dashboard = () => {
 
 
     const [isAdmin] = useAdmin()
-    console.log(isAdmin)
+    // console.log(isAdmin)
     // const isAdmin = true
 
     // {isAdmin && <AdminDashboard/>}

@@ -8,7 +8,7 @@ import useAllUser from '../../Hook/useAllUser';
 const InstructorPage = () => {
     const {loading}  = useAuth()
 
-    const [axiosSecure] = useAxiosSecure()
+    // const [axiosSecure] = useAxiosSecure()
 
     // const { data: instructors } = useQuery({
     //     queryKey: ['AllUser'],
@@ -23,6 +23,7 @@ const InstructorPage = () => {
     // console.log(instructors)
 
     const [allUser] = useAllUser()
+    console.log(allUser)
 
     return (
         <div>
