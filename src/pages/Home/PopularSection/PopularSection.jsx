@@ -13,7 +13,7 @@ const PopularSection = () => {
             return res.data
         }
     })
-    console.log(popular)
+    // console.log(popular)
 
     return (
         <div>
