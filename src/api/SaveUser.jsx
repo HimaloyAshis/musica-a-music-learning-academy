@@ -4,7 +4,8 @@ const SaveUser = user => {
     const currentUser = {
         email: user.email,
         name: user.displayName,
-        image: user.photoURL
+        image: user.photoURL,
+        role:'student'
     }
 
     axios.put(`http://localhost:5000/users/${user?.email}`, currentUser)
