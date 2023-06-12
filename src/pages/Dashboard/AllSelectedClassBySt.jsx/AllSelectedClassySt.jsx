@@ -18,9 +18,16 @@ const AllSelectedClassySt = () => {
     })
 
     console.log(favClass)
+    const total = favClass?.reduce((sum, item) => parseInt(item.price) + sum, 0)
+    const inTotal = parseFloat(total)
+    const allTotal = inTotal.toFixed(2)
+    console.log(allTotal)
 
     return (
         <div className="overflow-x-auto">
+            <div>
+                <p className='text-3xl font-bold text-center text-[#8BACAA]'>Total price : $ {allTotal}</p>
+            </div>
             <table className="table">
                 {/* head */}
                 <thead>
@@ -37,7 +44,12 @@ const AllSelectedClassySt = () => {
                 </thead>
                 <tbody>
                    {
-                    favClass.map((favorite, index)=> <AllSelectClassDashCard key={favorite._id} favClass={favorite} index={index}></AllSelectClassDashCard>)
+                    favClass.map((favorite, index)=> <AllSelectClassDashCard 
+                    key={favorite._id} 
+                    favClass={favorite} 
+                    index={index}
+                    // allTotal={allTotal}
+                    ></AllSelectClassDashCard>)
                    }
                 </tbody>
             </table>

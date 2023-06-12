@@ -8,9 +8,9 @@ const useAllUser = () => {
 
     const {data: allUser= [], refetch, isLoading:loadings} = useQuery({
         queryKey:['allUser'],
-        enabled: !loading,
+        // enabled: !loading,
         queryFn: async ()=>{
-            const res = await axios.get('http://localhost:5000/allUser')
+            const res = await axios('http://localhost:5000/allUser')
             console.log(res.data)
             return res.data
             

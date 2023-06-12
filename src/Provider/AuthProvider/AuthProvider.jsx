@@ -55,7 +55,7 @@ const AuthProvider = ({ children }) => {
                         setLoading(false)
                         // console.log(data.data)
                     })
-                    .catch(error=>console.log(error.message))
+                    .catch(error => console.log(error.message))
             }
             else {
                 localStorage.removeItem("user_secret")

@@ -24,14 +24,14 @@ const Dashboard = () => {
     return (
         <div className="drawer lg:drawer-open">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-            <div className="drawer-content flex flex-col items-center justify-center">
+            <div className="drawer-content flex flex-col items-center bg-[#809b8a] justify-center">
                 <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
                 <Outlet></Outlet>
 
             </div>
             <div className="drawer-side">
                 <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-                <ul className="menu p-4 w-80 h-full bg-[#8dac83] ">
+                <ul className="menu p-4 w-80 h-full bg-[#6e917c] ">
                     {/* Sidebar content here */}
 
 
@@ -42,7 +42,9 @@ const Dashboard = () => {
 
                     {isInstructor && <InstructorDashboard></InstructorDashboard>}
 
-                    {isStudent ? <StudentDashboard></StudentDashboard> : <InstructorDashboard></InstructorDashboard>}
+                    {isStudent && <StudentDashboard></StudentDashboard>}
+
+                    {/* {isStudent ? <StudentDashboard></StudentDashboard> : <InstructorDashboard></InstructorDashboard>} */}
 
                 </ul>
 

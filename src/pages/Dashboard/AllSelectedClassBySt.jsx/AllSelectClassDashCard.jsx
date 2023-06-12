@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
-const AllSelectClassDashCard = ({ favClass, index }) => {
+const AllSelectClassDashCard = ({ favClass, index,allTotal }) => {
 
     const { class_Image, class_Name, price, _id } = favClass
 
