@@ -11,6 +11,8 @@ import Instructors from "../pages/Dashboard/Instructors/Instructors";
 import AllUser from "../pages/Dashboard/AllUser/AllUser";
 import AllClasses from "../pages/Dashboard/AllClasses/AllClasses";
 import InstructorPage from "../pages/InstructorPage/InstructorPage";
+import AllStudents from "../pages/Dashboard/AllStudents/AllStudents";
+
 
 const router = createBrowserRouter([
     {
@@ -58,6 +60,10 @@ const router = createBrowserRouter([
             {
                 path:'allClass',
                 element:<AllClasses></AllClasses>
+            },
+            {
+                path:'students',
+                element:<AllStudents></AllStudents>
             }
         ]
     }
