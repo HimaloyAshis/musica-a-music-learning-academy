@@ -63,7 +63,7 @@ const router = createBrowserRouter([
                 element:<AllClasses></AllClasses>
             },
             {
-                path:'students',
+                path:'selectedClass',
                 element:<AllSelectedClassySt></AllSelectedClassySt>
             }
         ]

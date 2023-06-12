@@ -1,6 +1,5 @@
 import React from 'react';
-import { FaHome, FaPlus, FaStoreAlt } from 'react-icons/fa';
-import { Link, Outlet } from 'react-router-dom';
+import {  Outlet } from 'react-router-dom';
 import './Dashboard.css'
 import useAdmin from '../../Hook/useAdmin';
 import AdminDashboard from './AdminDashboard';
@@ -13,9 +12,9 @@ const Dashboard = () => {
     console.log(isAdmin)
     // const isAdmin = true
 
-//     {isAdmin && <AdminDashboard/>}
-// {isInstructor && <InstructorDashboard/>}
-// {isStudent && <StudentDashboard/>}
+    // {isAdmin && <AdminDashboard/>}
+    // {isInstructor && <InstructorDashboard/>}
+    // {isStudent && <StudentDashboard/>}
 
     return (
         <div className="drawer lg:drawer-open">
