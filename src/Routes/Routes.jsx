@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { Router, createBrowserRouter } from "react-router-dom";
 import Home from "../pages/Home/Home";
 import Main from "../LayOut/Main";
 import ErrorElement from "../pages/ErrorElement/ErrorElement";
@@ -68,6 +68,10 @@ const router = createBrowserRouter([
             }
         ]
     }
+   
+    
 ])
 
 export default router
+
+

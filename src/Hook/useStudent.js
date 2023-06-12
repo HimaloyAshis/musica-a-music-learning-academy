@@ -13,7 +13,7 @@ const useStudent = () => {
         queryFn: async()=>{
             const res = await axiosSecure.get(`/users/students/${user?.email}`)
             console.log(res.data)
-            return res.data.admin
+            return res.data.student
         }
     })
 

@@ -8,7 +8,7 @@ const AllSelectClassDashCard = ({ favClass, index }) => {
 
 
     const handleDelete = (id) => {
-        axios.delete(`http://localhost:5000/${id}`)
+        axios.delete(`http://localhost:5000/students/${id}`)
             .then(data => {
                 if (data.data.deleteCount > 0){
                     toast('')
