@@ -14,7 +14,7 @@ const Class = () => {
     const { data: allClasses } = useQuery({
         queryKey: ['allClasses'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/class')
+            const res = await fetch('http://localhost:5000/approve/class')
 
             console.log(res)
             return res.json()

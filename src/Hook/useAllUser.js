@@ -10,7 +10,7 @@ const useAllUser = () => {
         queryKey:['allUser'],
         // enabled: !loading,
         queryFn: async ()=>{
-            const res = await axios('http://localhost:5000/allUser')
+            const res = await axios('http://localhost:5000/allUsers')
             console.log(res.data)
             return res.data
             

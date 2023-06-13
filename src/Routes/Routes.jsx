@@ -52,7 +52,7 @@ const router = createBrowserRouter([
         errorElement:<ErrorElement></ErrorElement>,
         children:[
             {
-                path:'instructors',
+                path:'instructor',
                 element:<Instructors></Instructors>
             },
             {
