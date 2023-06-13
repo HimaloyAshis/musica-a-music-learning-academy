@@ -7,7 +7,7 @@ const InstructorDashboard = () => {
         <div>
             <li><Link to={'/'}><FaHome></FaHome> Instructor Home</Link></li>
             <li><Link to={'/dashboard/instructor'}><FaPlus></FaPlus> Add class</Link></li>
-            <li><Link><FaStoreAlt></FaStoreAlt> My class</Link></li>
+            <li><Link to={'/dashboard/createdClass'}><FaStoreAlt></FaStoreAlt> My class</Link></li>
             <div className="divider">OR</div>
             <li><Link><FaHome></FaHome> User Home</Link></li>
             <li><Link><FaHome></FaHome> User Home</Link></li>

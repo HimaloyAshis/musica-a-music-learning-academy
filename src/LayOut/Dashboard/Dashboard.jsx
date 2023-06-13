@@ -14,12 +14,7 @@ const Dashboard = () => {
     const [isAdmin] = useAdmin()
     const [isInstructor] = useInstructor()
     const [isStudent] = useStudent()
-    // console.log(isAdmin)
-    // const isAdmin = true
-
-    // {isAdmin && <AdminDashboard/>}
-    // {isInstructor && <InstructorDashboard/>}
-    // {isStudent && <StudentDashboard/>}
+ 
 
     return (
         <div className="drawer lg:drawer-open">
@@ -36,15 +31,11 @@ const Dashboard = () => {
 
 
 
-                    {
-                        isAdmin && <AdminDashboard></AdminDashboard>
-                    }
+                    { isAdmin && <AdminDashboard></AdminDashboard>}
 
                     {isInstructor && <InstructorDashboard></InstructorDashboard>}
 
                     {isStudent && <StudentDashboard></StudentDashboard>}
-
-                    {/* {isStudent ? <StudentDashboard></StudentDashboard> : <InstructorDashboard></InstructorDashboard>} */}
 
                 </ul>
 

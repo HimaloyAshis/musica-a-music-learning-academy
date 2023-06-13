@@ -13,6 +13,7 @@ import AllClasses from "../pages/Dashboard/AllClasses/AllClasses";
 import InstructorPage from "../pages/InstructorPage/InstructorPage";
 import AllSelectedClassySt from "../pages/Dashboard/AllSelectedClassBySt.jsx/AllSelectedClassySt";
 import Payment from "../pages/Dashboard/Payment/Payment";
+import CreatedClass from "../pages/Dashboard/CreatedClass/CreatedClass";
 
 
 
@@ -70,6 +71,10 @@ const router = createBrowserRouter([
             {
                 path:'payment',
                 element:<Payment></Payment>
+            },
+            {
+                path:'createdClass',
+                element:<CreatedClass></CreatedClass>
             }
         ]
     }
