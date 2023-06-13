@@ -10,7 +10,10 @@ const stripePromise = loadStripe(import.meta.env.VITE_PUBLISHABLE_KEY);
 const Payment = () => {
 
     const [favClass] = useSelectedClass()
-    const total = favClass.reduce((sum , item)=> sum + item.price)
+    console.log(favClass)
+   
+    const total = favClass.reduce((sum , item)=> sum + parseInt(item.price), 0)
+
     const price = parseFloat(total.toFixed(2))
 
 
