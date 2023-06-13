@@ -13,7 +13,7 @@ const Footer = () => {
                 </div>
             </div>
             <div className='text-white'>
-                <p>Policy adn privacy</p>
+                <p>Policy and privacy</p>
                 <p>&copy; All Rights are reserved</p>
             </div>
             <div className='text-white'>
