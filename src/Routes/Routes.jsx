@@ -14,6 +14,7 @@ import InstructorPage from "../pages/InstructorPage/InstructorPage";
 import AllSelectedClassySt from "../pages/Dashboard/AllSelectedClassBySt.jsx/AllSelectedClassySt";
 import Payment from "../pages/Dashboard/Payment/Payment";
 import CreatedClass from "../pages/Dashboard/CreatedClass/CreatedClass";
+import UpdateCreateClass from "../pages/Dashboard/updateCreatedClass.jsx/UpdateCreateClass";
 
 
 
@@ -75,6 +76,11 @@ const router = createBrowserRouter([
             {
                 path:'createdClass',
                 element:<CreatedClass></CreatedClass>
+            },
+            {
+                path:'updateClass/:id',
+                element:<UpdateCreateClass></UpdateCreateClass>,
+                loader:({params})=>fetch(`http://localhost:5000/dashboard/updateClass/${params.id}`)
             }
         ]
     }

@@ -31,6 +31,7 @@ const ClassCard = ({ classes }) => {
                     toast('Your favorite class added')
                 })
                 .catch(error => toast(error.message))
+                
             const classInfo = {
                 class_Image,
                 class_Name,

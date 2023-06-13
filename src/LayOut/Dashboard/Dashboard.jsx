@@ -3,10 +3,10 @@ import { Outlet } from 'react-router-dom';
 import './Dashboard.css'
 import useAdmin from '../../Hook/useAdmin';
 import AdminDashboard from './AdminDashboard';
-import InstructorDashboard from './InstructorDashboard';
 import StudentDashboard from './StudentDashboard';
 import useInstructor from '../../Hook/useInstructor';
 import useStudent from '../../Hook/useStudent';
+import InstructorDashboard from './InstructorDashboard';
 
 const Dashboard = () => {
 
