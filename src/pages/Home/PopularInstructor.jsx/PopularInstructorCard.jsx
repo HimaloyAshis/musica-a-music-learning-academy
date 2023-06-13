@@ -15,7 +15,7 @@ const PopularInstructorCard = ({pop}) => {
                 <h2 className="card-title">Instructor Name : {name}</h2>
                 
                 <div className="card-actions">
-                    <Link to={'/instructor'} className="btn butn">Take a look</Link>
+                    <Link to={'/instructors'} className="btn butn">Take a look</Link>
                 </div>
             </div>
         </div>

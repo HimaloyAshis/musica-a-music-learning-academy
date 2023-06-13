@@ -1,0 +1,14 @@
+.About {
+
+    height: 900px;
+    width: auto;
+    background-size: cover;
+    
+    background-position: fixed;
+    background-attachment: center;
+    background-image: linear-gradient(rgba(48, 79, 79, 0.582), rgba(94, 153, 153, 0.582)), url('https://images.unsplash.com/photo-1681801727150-24302f7c645f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=751&q=80');
+
+}
+
+
+/* linear-gradient(rgba(48, 79, 79, 0.582), rgba(94, 153, 153, 0.582)),  */
