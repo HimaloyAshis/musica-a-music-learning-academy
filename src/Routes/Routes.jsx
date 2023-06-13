@@ -15,6 +15,7 @@ import AllSelectedClassySt from "../pages/Dashboard/AllSelectedClassBySt.jsx/All
 import Payment from "../pages/Dashboard/Payment/Payment";
 import CreatedClass from "../pages/Dashboard/CreatedClass/CreatedClass";
 import UpdateCreateClass from "../pages/Dashboard/updateCreatedClass.jsx/UpdateCreateClass";
+import { updateClass } from "../api/UpdateClass";
 
 
 
@@ -80,7 +81,7 @@ const router = createBrowserRouter([
             {
                 path:'updateClass/:id',
                 element:<UpdateCreateClass></UpdateCreateClass>,
-                loader:({params})=>fetch(`http://localhost:5000/dashboard/updateClass/${params.id}`)
+                loader:({ params }) => updateClass(params.id)
             }
         ]
     }

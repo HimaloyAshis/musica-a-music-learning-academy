@@ -1,9 +1,13 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import useAuth from '../../../Hook/useAuth';
+import { useLoaderData } from 'react-router-dom';
 
 const UpdateCreateClass = () => {
     const {user} = useAuth()
+
+    const ClassData = useLoaderData()
+    console.log(ClassData)
 
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {

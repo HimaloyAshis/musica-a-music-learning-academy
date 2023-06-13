@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 
 const CreatedClassTab = ({ AllClass, index }) => {
@@ -31,7 +32,7 @@ const CreatedClassTab = ({ AllClass, index }) => {
                         {/* <button disabled={AllClass.status === 'Approve'} onClick={() => handleApprove(AllClass._id)} className="btn btn-ghost bg-[#9BA4B5] btn-xs">Approve</button>
                         <button disabled={AllClass.status === 'Approve'} onClick={() => handleDeny(AllClass._id)} className="btn btn-ghost my-2 bg-[#9BA4B5] btn-xs">Deny</button>
                         <button onClick={() => handleFeedBack(AllClass._id,)} className="btn btn-ghost bg-[#9BA4B5] btn-xs">Feedback</button> */}
-                        <button className='butn'>update</button>
+                        <Link to={`/dashboard/updateClass/${AllClass._id}`} className='butn'>update</Link >
                     </div>
                 </th>
             </tr>
