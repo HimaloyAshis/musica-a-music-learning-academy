@@ -1,10 +1,11 @@
 import axios from 'axios';
-import { parse } from 'postcss';
 import React from 'react';
-import { toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
 import useAuth from '../../Hook/useAuth';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2'
+import 'sweetalert2/src/sweetalert2.scss'
+
 
 const ClassCard = ({ classes }) => {
 
@@ -21,7 +22,7 @@ const ClassCard = ({ classes }) => {
         if (user && user?.email) {
             const availAbleSeats = {
 
-                availableSeats: parseInt(availableSeats) - 1,
+                // availableSeats: parseInt(availableSeats) - 1,
                 booked: availAbleSeat + 1
             }
 
@@ -77,6 +78,7 @@ const ClassCard = ({ classes }) => {
 
     return (
         <div className="card w-96 py-6 bg-[#EEE2DE] shadow-xl">
+            <ToastContainer></ToastContainer>
             <figure className="px-10 pt-10">
                 <img src={class_Image} alt="Shoes" className="rounded-xl" />
             </figure>

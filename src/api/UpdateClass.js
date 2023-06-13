@@ -1,9 +1,10 @@
 import axios from "axios"
 
-export const updateClass = async id => {
-    const response = await fetch(`http://localhost:5000/dashboard/updateClass/${id}`)
+export const updateClass = async ({params}) => {
+    const response = await fetch(`http://localhost:5000/dashboard/updateClass/${params.id}`)
     const data = await response.json()
-    console.log(id)
+    console.log(params.id)
+    return data
 
 
 //    await axios(`http://localhost:5000/dashboard/updateClass/${id}`)

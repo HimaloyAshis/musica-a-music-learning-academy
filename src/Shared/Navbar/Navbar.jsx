@@ -6,32 +6,37 @@ import { toast } from 'react-toastify';
 
 const Navbar = () => {
 
-    const {logOut} = useAuth()
+    const { user,logOut } = useAuth()
 
 
-    const handleLogout = ( ) =>{
+
+    const handleLogout = () => {
 
         logOut()
-        .then(()=>{})
-        .catch(error=>toast.error(error.message))
+            .then(() => { })
+            .catch(error => toast.error(error.message))
     }
 
     return (
         <div className='bg-[#EEE2DE]  p-5 flex justify-between items-center'>
             <div>
-                <h1>Musica Academy</h1>
+                <h1 className='text-xl font-bold text-[#5C8984]'>Musica</h1>
             </div>
             <div className='flex gap-3'>
                 <Link className='butn'>Home</Link>
                 <Link to={'/instructors'} className='butn'>Instructors</Link>
                 <Link className='butn' to={'/dashboard/instructor'}>Dashboard</Link>
-                <Link className='butn' onClick={handleLogout}>Logout</Link>
                 <Link className='butn' to={'/class'}>Class</Link>
-                <Link className='butn' to={'/login'}>Login</Link>
+                { user ? 
+                <><Link className='butn' onClick={handleLogout}>Logout</Link>
+                <div className="w-24 rounded-full">
+                    <img className='w-10 h-8 rounded-full' src={user.photoURL} />
+                </div></>
+                :
+                <Link className='butn' to={'/login'}>Login</Link>}
+
             </div>
-            <div>
-                <FaUserCircle/>
-            </div>
+
         </div>
     );
 };

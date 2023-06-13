@@ -31,7 +31,7 @@ const router = createBrowserRouter([
             },
             {
                 path:'/class',
-                element:<PrivateRoute><Class></Class></PrivateRoute>,
+                element:<Class></Class>,
             },
             {
                 path:'/instructors',
@@ -81,7 +81,7 @@ const router = createBrowserRouter([
             {
                 path:'updateClass/:id',
                 element:<UpdateCreateClass></UpdateCreateClass>,
-                loader:({ params }) => updateClass(params.id)
+                loader:updateClass
             }
         ]
     }
