@@ -22,7 +22,7 @@ const Payment = () => {
         <div>
             <h1 className='text-center font-extrabold text-4xl text-[#606C5D] py-6'>please process your payment</h1>
             <Elements stripe={stripePromise}>
-                <CheckOutForm price={price}></CheckOutForm>
+                <CheckOutForm favClass={favClass} price={price}></CheckOutForm>
             </Elements>
         </div>
     );

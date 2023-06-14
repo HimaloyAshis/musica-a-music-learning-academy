@@ -5,6 +5,8 @@ import useAuth from '../../Hook/useAuth';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2'
 import 'sweetalert2/src/sweetalert2.scss'
+import useInstructor from '../../Hook/useInstructor';
+import useAdmin from '../../Hook/useAdmin';
 
 
 const ClassCard = ({ classes }) => {
@@ -13,6 +15,8 @@ const ClassCard = ({ classes }) => {
     const navigate = useNavigate()
     const location = useLocation()
 
+    const [isInstructor]= useInstructor()
+    const [isAdmin] = useAdmin()
     const { class_Image, class_Name, price, Instructor_Name, availableSeats, booked, } = classes
 
     let availAbleSeat = booked || 0
@@ -77,7 +81,7 @@ const ClassCard = ({ classes }) => {
 
 
     return (
-        <div className="card w-96 py-6 bg-[#EEE2DE] shadow-xl">
+        <div className={`card w-96 py-6  shadow-xl ${availableSeats === 0 ? `bg-red-500`: `bg-[#EEE2DE]`}`}>
             <ToastContainer></ToastContainer>
             <figure className="px-10 pt-10">
                 <img src={class_Image} alt="Shoes" className="rounded-xl" />
@@ -88,7 +92,7 @@ const ClassCard = ({ classes }) => {
                 <p>AvailableSeats: {availableSeats}</p>
                 <p>price: $ {price}</p>
                 <div className="card-actions">
-                    <button onClick={() => handleAvailableSeats(classes._id)} className="btn  bg-[#829797]">Select Class</button>
+                    <button disabled={availableSeats=== 0 || isAdmin|| isInstructor } onClick={() => handleAvailableSeats(classes._id)} className="btn  bg-[#829797]">Select Class</button>
                 </div>
             </div>
         </div>
