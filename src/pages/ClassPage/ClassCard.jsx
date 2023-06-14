@@ -26,7 +26,7 @@ const ClassCard = ({ classes }) => {
         if (user && user?.email) {
             const availAbleSeats = {
 
-                // availableSeats: parseInt(availableSeats) - 1,
+                availableSeats: parseInt(availableSeats) - 1,
                 booked: availAbleSeat + 1
             }
 
