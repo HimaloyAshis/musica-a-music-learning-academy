@@ -17,7 +17,7 @@ const PaySuccessClass = () => {
         }
     })
 
-    console.log(PaySuccess)
+    // console.log(PaySuccess)
 
     return (
         <div className="overflow-x-auto ">
