@@ -18,6 +18,7 @@ import UpdateCreateClass from "../pages/Dashboard/updateCreatedClass.jsx/UpdateC
 import { updateClass } from "../api/UpdateClass";
 import PaySuccessClass from "../pages/ClassPage/PaymentSucessfulClass/PaySuccessClass";
 import PaymentHistory from "../pages/ClassPage/PaymentSucessfulClass/PaymentHistory";
+import PrivateDashboard from "./PrivateRoute/PrivateDashboard";
 
 
 
@@ -53,7 +54,7 @@ const router = createBrowserRouter([
     },
     {
         path:'dashboard',
-        element:<Dashboard></Dashboard>,
+        element:<PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
         errorElement:<ErrorElement></ErrorElement>,
         children:[
             {
@@ -62,36 +63,36 @@ const router = createBrowserRouter([
             },
             {
                 path:"allUser",
-                element:<AllUser></AllUser>
+                element:<PrivateDashboard><AllUser></AllUser></PrivateDashboard>
             },
             {
                 path:'allClass',
-                element:<AllClasses></AllClasses>
+                element:<PrivateDashboard><AllClasses></AllClasses></PrivateDashboard>
             },
             {
                 path:'selectedClass',
-                element:<AllSelectedClassySt></AllSelectedClassySt>
+                element:<PrivateDashboard><AllSelectedClassySt></AllSelectedClassySt></PrivateDashboard>
             },
             {
                 path:'payment',
-                element:<Payment></Payment>
+                element:<PrivateDashboard><Payment></Payment></PrivateDashboard>
             },
             {
                 path:'createdClass',
-                element:<CreatedClass></CreatedClass>
+                element:<PrivateDashboard><CreatedClass></CreatedClass></PrivateDashboard>
             },
             {
                 path:'updateClass/:id',
-                element:<UpdateCreateClass></UpdateCreateClass>,
+                element:<PrivateDashboard><UpdateCreateClass></UpdateCreateClass></PrivateDashboard>,
                 loader:updateClass
             },
             {
                 path:'paySuccessClass',
-                element:<PaySuccessClass></PaySuccessClass>
+                element:<PrivateDashboard><PaySuccessClass></PaySuccessClass></PrivateDashboard>
             },
             {
                 path:'paymentHistory',
-                element:<PaymentHistory></PaymentHistory>
+                element:<PrivateDashboard><PaymentHistory></PaymentHistory></PrivateDashboard>
             }
         ]
     }
