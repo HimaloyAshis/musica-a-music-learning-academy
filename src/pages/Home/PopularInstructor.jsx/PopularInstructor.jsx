@@ -9,7 +9,7 @@ const PopularInstructor = () => {
     const { data: user = [] } = useQuery({
         queryKey: ['user'],
         queryFn: async () => {
-            const res = await axios.get('http://localhost:5000/user/popular')
+            const res = await axios.get('https://music-instrument-learning-server-himlaoy.vercel.app/user/popular')
             // console.log(res.data)
             return res.data
         }

@@ -19,7 +19,7 @@ const UpdateCreateClass = () => {
         // addClasses(data)
         console.log(data)
 
-        axios.put(`http://localhost:5000/selected/class/${_id}`, data)
+        axios.put(`https://music-instrument-learning-server-himlaoy.vercel.app/selected/class/${_id}`, data)
                 .then(data => {
                     console.log(data.data)
                     toast(' Class updated')

@@ -30,7 +30,7 @@ const ClassCard = ({ classes }) => {
                 booked: availAbleSeat + 1
             }
 
-            axios.put(`http://localhost:5000/selected/class/${id}`, availAbleSeats)
+            axios.put(`https://music-instrument-learning-server-himlaoy.vercel.app/selected/class/${id}`, availAbleSeats)
                 .then(data => {
                     console.log(data.data)
                     toast('Your favorite class added')
@@ -45,7 +45,7 @@ const ClassCard = ({ classes }) => {
                 price
             }
 
-            axios.post(`http://localhost:5000/students`, classInfo)
+            axios.post(`https://music-instrument-learning-server-himlaoy.vercel.app/students`, classInfo)
                 .then(data => {
                     if (data.insertedId > 0) {
                         Swal.fire({

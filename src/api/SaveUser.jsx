@@ -8,7 +8,7 @@ const SaveUser = user => {
         role:'student'
     }
 
-    axios.put(`http://localhost:5000/users/${user?.email}`, currentUser)
+    axios.put(`https://music-instrument-learning-server-himlaoy.vercel.app/users/${user?.email}`, currentUser)
         .then(data => {
             console.log(data)
         })
@@ -25,7 +25,7 @@ export const MakeAdmin = (user) => {
         role: 'Admin',
     }
 
-    axios.put(`http://localhost:5000/users/${user?.email}`, currentUser)
+    axios.put(`https://music-instrument-learning-server-himlaoy.vercel.app/users/${user?.email}`, currentUser)
         .then(data => {
             console.log(data.data)
         })
@@ -41,7 +41,7 @@ export const MakeInstructor = (user) => {
         role: 'Instructor',
     }
 
-    axios.put(`http://localhost:5000/users/${user?.email}`, currentUser)
+    axios.put(`https://music-instrument-learning-server-himlaoy.vercel.app/users/${user?.email}`, currentUser)
         .then(data => {
             console.log(data.data)
         })

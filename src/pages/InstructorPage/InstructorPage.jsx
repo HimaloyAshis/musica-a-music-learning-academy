@@ -15,7 +15,7 @@ const InstructorPage = () => {
         queryKey: ['AllUser'],
         // enabled: !loading,
         queryFn: async () => {
-            const res = await axios.get('http://localhost:5000/instructor')
+            const res = await axios.get('https://music-instrument-learning-server-himlaoy.vercel.app/instructor')
             console.log(res.data)
             return res.data
         }

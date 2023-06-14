@@ -12,7 +12,7 @@ const AllSelectedClassySt = () => {
         queryKey: ['favClass' , user?.email],
         enabled: !loading,
         queryFn: async () => {
-            const res = await axios.get(`http://localhost:5000/student/favClass/${user?.email}`)
+            const res = await axios.get(`https://music-instrument-learning-server-himlaoy.vercel.app/student/favClass/${user?.email}`)
             return res.data
         }
     })

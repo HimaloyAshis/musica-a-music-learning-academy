@@ -9,7 +9,7 @@ const PopularSection = () => {
     const { data: popular = [] } = useQuery({
         queryKey: ['popular'],
         queryFn: async () => {
-            const res = await axios.get('http://localhost:5000/class/booked')
+            const res = await axios.get('https://music-instrument-learning-server-himlaoy.vercel.app/class/booked')
             return res.data
         }
     })

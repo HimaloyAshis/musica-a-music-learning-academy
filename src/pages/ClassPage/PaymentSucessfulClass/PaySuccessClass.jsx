@@ -11,7 +11,7 @@ const PaySuccessClass = () => {
         queryKey: ['PaySuccess', user?.email],
         // enabled: !loading,
         queryFn: async () => {
-            const res = await axios(`http://localhost:5000/paySuccess/class/${user?.email}`)
+            const res = await axios(`https://music-instrument-learning-server-himlaoy.vercel.app/paySuccess/class/${user?.email}`)
             // console.log(res.data)
             return res.data
         }

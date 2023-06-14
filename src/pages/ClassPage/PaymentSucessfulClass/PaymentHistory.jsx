@@ -8,7 +8,7 @@ const PaymentHistory = () => {
         queryKey: ['PayInOrderTime'],
         // enabled: !loading,
         queryFn: async () => {
-            const res = await axios(`http://localhost:5000/paySuccess/AllClass`)
+            const res = await axios(`https://music-instrument-learning-server-himlaoy.vercel.app/paySuccess/AllClass`)
             // console.log(res.data)
             return res.data
         }

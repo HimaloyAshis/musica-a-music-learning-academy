@@ -13,7 +13,7 @@ const AllclassTa = ({ AllClass, index }) => {
             status: 'Approve'
         };
 
-        axios.patch(`http://localhost:5000/allClass/${id}`, info)
+        axios.patch(`https://music-instrument-learning-server-himlaoy.vercel.app/allClass/${id}`, info)
             .then(data => {
                 console.log(data.data);
                 if (data.data.modifiedCount > 0) {
@@ -28,7 +28,7 @@ const AllclassTa = ({ AllClass, index }) => {
             status: 'Deny'
         };
 
-        axios.patch(`http://localhost:5000/allClass/${id}`, info)
+        axios.patch(`https://music-instrument-learning-server-himlaoy.vercel.app/allClass/${id}`, info)
             .then(data => {
                 console.log(data.data);
                 if (data.data.modifiedCount > 0) {

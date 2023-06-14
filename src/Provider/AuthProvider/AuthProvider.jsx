@@ -49,7 +49,7 @@ const AuthProvider = ({ children }) => {
             console.log('Here is current User', currentUser)
             if (currentUser) {
                 const user = { email: currentUser?.email }
-                axios.post('http://localhost:5000/jwt', user)
+                axios.post('https://music-instrument-learning-server-himlaoy.vercel.app/jwt', user)
                     .then(data => {
                         localStorage.setItem('user_secret', data.data.token)
                         setLoading(false)

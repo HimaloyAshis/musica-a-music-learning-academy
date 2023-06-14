@@ -11,7 +11,7 @@ const AllSelectClassDashCard = ({ favClass, index,allTotal }) => {
 
 
     const handleDelete = (id) => {
-        axios.delete(`http://localhost:5000/students/${id}`)
+        axios.delete(`https://music-instrument-learning-server-himlaoy.vercel.app/students/${id}`)
             .then(data => {
                 if (data.data.deleteCount > 0){
                     toast('Your class deleted')
