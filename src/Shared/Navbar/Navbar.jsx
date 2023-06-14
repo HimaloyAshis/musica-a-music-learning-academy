@@ -18,7 +18,7 @@ const Navbar = () => {
     }
 
     return (
-        <div className='bg-[#EEE2DE]  p-5 flex-col lg:flex lg:justify-between items-center'>
+        <div className='bg-[#EEE2DE]  p-5  lg:flex lg:justify-between items-center'>
             <div>
                 <h1 className='text-xl font-bold text-[#5C8984]'>Musica</h1>
             </div>
