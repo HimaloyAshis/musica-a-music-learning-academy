@@ -9,7 +9,7 @@ const AllSelectedClassySt = () => {
     const { user, loading } = useAuth()
 
     const { data: favClass = [] } = useQuery({
-        queryKey: ['favClass'],
+        queryKey: ['favClass' , user?.email],
         enabled: !loading,
         queryFn: async () => {
             const res = await axios.get(`http://localhost:5000/student/favClass/${user?.email}`)

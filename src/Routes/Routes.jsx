@@ -16,6 +16,7 @@ import Payment from "../pages/Dashboard/Payment/Payment";
 import CreatedClass from "../pages/Dashboard/CreatedClass/CreatedClass";
 import UpdateCreateClass from "../pages/Dashboard/updateCreatedClass.jsx/UpdateCreateClass";
 import { updateClass } from "../api/UpdateClass";
+import PaySuccessClass from "../pages/ClassPage/PaymentSucessfulClass/PaySuccessClass";
 
 
 
@@ -82,6 +83,10 @@ const router = createBrowserRouter([
                 path:'updateClass/:id',
                 element:<UpdateCreateClass></UpdateCreateClass>,
                 loader:updateClass
+            },
+            {
+                path:'paySuccessClass',
+                element:<PaySuccessClass></PaySuccessClass>
             }
         ]
     }

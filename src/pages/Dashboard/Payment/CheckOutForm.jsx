@@ -91,7 +91,8 @@ const CheckOutForm = ({favClass, price}) => {
                 quantity: favClass.length,
                 favClassId: favClass.map(item=>item._id),
                 status:'service pending',
-                favClassName: favClass.map(item=>item.class_Name)
+                favClassName: favClass.map(item=>item.class_Name),
+                
             }
 
 
@@ -115,17 +116,19 @@ const CheckOutForm = ({favClass, price}) => {
                 email: user?.email,
                 transactionId:paymentIntent.id,
                 price,
+                prices:favClass.map(item=>item.price),
                 date: new Date(),
                 quantity: favClass.length,
                 favClassId: favClass.map(item=>item._id),
                 status:'service_done',
-                favClassName: favClass.map(item=>item.class_Name)
+                favClassName: favClass.map(item=>item.class_Name),
+                class_Image: favClass.map(item=>item.class_Image)
             }
 
             axiosSecure.post('/payments/success',payments)
             .then(res=>{
                 console.log(res.data.insertResult)
-                if(res.data.insertResult.insertedId){
+                if(res.data.insertedId){
 
                     Swal.fire({
                         position: 'top-end',
