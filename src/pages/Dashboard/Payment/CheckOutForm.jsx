@@ -96,7 +96,7 @@ const CheckOutForm = ({favClass, price}) => {
                 
             }
 
-
+            
             axiosSecure.post('/payments',payment)
             .then(res=>{
                 console.log(res.data.insertResult)

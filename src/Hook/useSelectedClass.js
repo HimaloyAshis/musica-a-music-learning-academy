@@ -3,20 +3,12 @@ import useAuth from './useAuth';
 import { useQuery } from 'react-query';
 import axios from 'axios';
 
-const useSelectedClass = () => {
-    const {loading, user} = useAuth()
-
-    const { data: selectedClass = [] } = useQuery({
-        queryKey: ['favClass'],
-        enabled: !loading,
-        queryFn: async () => {
-            const res = await axios.get(`https://music-instrument-learning-server-himlaoy.vercel.app/student/favClass/${user?.email}`)
-            console.log(selectedClass)
-            return res.data
-        }
-    })
-
-    return [selectedClass]
+const useSelectedClass = async ({params}) => {
+    
+        const response = await fetch(`https://music-instrument-learning-server-himlaoy.vercel.app/dashboard/payment/${params.id}`)
+        const data = await response.json()
+        console.log(params.id)
+        return data
 };
 
 export default useSelectedClass;
