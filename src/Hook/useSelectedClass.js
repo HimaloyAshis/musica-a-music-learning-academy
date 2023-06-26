@@ -1,7 +1,4 @@
 
-import useAuth from './useAuth';
-import { useQuery } from 'react-query';
-import axios from 'axios';
 
 const useSelectedClass = async ({params}) => {
     

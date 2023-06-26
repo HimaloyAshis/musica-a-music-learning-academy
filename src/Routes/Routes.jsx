@@ -19,6 +19,7 @@ import { updateClass } from "../api/UpdateClass";
 import PaySuccessClass from "../pages/ClassPage/PaymentSucessfulClass/PaySuccessClass";
 import PaymentHistory from "../pages/ClassPage/PaymentSucessfulClass/PaymentHistory";
 import PrivateDashboard from "./PrivateRoute/PrivateDashboard";
+import useSelectedClass from "../Hook/useSelectedClass";
 
 
 
@@ -76,7 +77,7 @@ const router = createBrowserRouter([
             {
                 path:'payment/:id',
                 element:<PrivateDashboard><Payment></Payment></PrivateDashboard>,
-                loader:({params})=> fetch()
+                loader:useSelectedClass
             },
             {
                 path:'createdClass',
