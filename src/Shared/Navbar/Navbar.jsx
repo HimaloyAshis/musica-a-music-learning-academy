@@ -25,10 +25,10 @@ const Navbar = () => {
             <div className='flex gap-3'>
                 <Link className='butn'>Home</Link>
                 <Link to={'/instructors'} className='butn'>Instructors</Link>
-                <Link className='butn' to={'/dashboard/instructor'}>Dashboard</Link>
                 <Link className='butn' to={'/class'}>Class</Link>
                 { user ? 
-                <><Link className='butn' onClick={handleLogout}>Logout</Link>
+                <><Link className='butn' to={'/dashboard/instructor'}>Dashboard</Link>
+                <Link className='butn' onClick={handleLogout}>Logout</Link>
                 <div className="w-24 rounded-full">
                     <img className='w-10 h-8 rounded-full' src={user.photoURL} />
                 </div></>

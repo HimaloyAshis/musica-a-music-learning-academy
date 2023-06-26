@@ -20,4 +20,4 @@ const useAllUser = () => {
     return [allUser, refetch, loadings, ]
 };
 
-export default useAllUser;
+export default useAllUser; 

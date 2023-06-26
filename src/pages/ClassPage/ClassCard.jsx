@@ -81,7 +81,7 @@ const ClassCard = ({ classes }) => {
 
 
     return (
-        <div className={`card w-96 py-6  shadow-xl ${availableSeats === 0 ? `bg-red-500`: `bg-[#EEE2DE]`}`}>
+        <div className={`card w-96 py-6  shadow-xl ${parseInt(availableSeats) === 0 ? `bg-red-500`: `bg-[#EEE2DE]`}`}>
             <ToastContainer></ToastContainer>
             <figure className="px-10 pt-10">
                 <img src={class_Image} alt="Shoes" className="rounded-xl" />
