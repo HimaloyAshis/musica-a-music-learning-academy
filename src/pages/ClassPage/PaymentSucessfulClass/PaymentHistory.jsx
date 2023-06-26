@@ -44,7 +44,7 @@ const PaymentHistory = () => {
                                             <div className="avatar">
                                                 <div className="mask mask-squircle w-12 h-12">
                                                     {
-                                                        favorite.class_Image.map(image => <img key={image} src={image} alt="Avatar Tailwind CSS Component" />)
+                                                         <img  src={favorite.class_Image} alt="Avatar Tailwind CSS Component" />
                                                     }
 
                                                 </div>
@@ -52,7 +52,7 @@ const PaymentHistory = () => {
                                         </div>
                                     </td>
                                     <td className=''>
-                                        {favorite.favClassName.map(className => <p key={className}>.{className}</p>)}
+                                        {favorite.favClassName}
                                     </td>
 
                                     <th>
