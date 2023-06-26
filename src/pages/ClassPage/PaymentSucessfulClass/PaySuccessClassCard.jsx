@@ -12,7 +12,7 @@ const PaySuccessClassCard = ({ favClass, index }) => {
                     <div className="avatar">
                         <div className="mask mask-squircle w-12 h-12">
                             {
-                                class_Image.map(image=> <img key={image} src={image} alt="Avatar Tailwind CSS Component" />)
+                                 <img  src={class_Image} alt="Avatar Tailwind CSS Component" />
                             }
                             
                         </div>
@@ -20,7 +20,7 @@ const PaySuccessClassCard = ({ favClass, index }) => {
                 </div>
             </td>
             <td className=''>
-                {favClassName.map(className=> <p key={className}>{className}</p> )}
+                {favClassName}
             </td>
            
             <th>

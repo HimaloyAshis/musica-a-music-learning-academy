@@ -74,8 +74,9 @@ const router = createBrowserRouter([
                 element:<PrivateDashboard><AllSelectedClassySt></AllSelectedClassySt></PrivateDashboard>
             },
             {
-                path:'payment',
-                element:<PrivateDashboard><Payment></Payment></PrivateDashboard>
+                path:'payment/:id',
+                element:<PrivateDashboard><Payment></Payment></PrivateDashboard>,
+                loader:({params})=> fetch(`https://music-instrument-learning-server-himlaoy.vercel.app/student/favClass/${params.id}`)
             },
             {
                 path:'createdClass',

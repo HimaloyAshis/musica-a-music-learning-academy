@@ -44,7 +44,7 @@ const AllSelectClassDashCard = ({ favClass, index,allTotal }) => {
                 <button onClick={() => handleDelete(_id)} className="btn butn btn-sm">Delete</button>
             </th>
             <th>
-                <Link to={'/dashboard/payment'} className="btn butn btn-sm">Pay</Link>
+                <Link to={`/dashboard/payment/${_id}`} className="btn butn btn-sm">Pay</Link>
             </th>
         </tr>
     );

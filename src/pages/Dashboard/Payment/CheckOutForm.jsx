@@ -5,6 +5,7 @@ import useAuth from '../../../Hook/useAuth';
 import Swal from 'sweetalert2';
 
 const CheckOutForm = ({favClass, price}) => {
+    // console.log(price)
 
     const stripe = useStripe()
     const elements = useElements()
@@ -89,9 +90,9 @@ const CheckOutForm = ({favClass, price}) => {
                 price,
                 date: new Date(),
                 quantity: favClass.length,
-                favClassId: favClass.map(item=>item._id),
+                favClassId: favClass._id,
                 status:'service pending',
-                favClassName: favClass.map(item=>item.class_Name),
+                favClassName: favClass.class_Name,
                 
             }
 
@@ -116,13 +117,14 @@ const CheckOutForm = ({favClass, price}) => {
                 email: user?.email,
                 transactionId:paymentIntent.id,
                 price,
-                prices:favClass.map(item=>item.price),
+                
                 date: new Date(),
                 quantity: favClass.length,
-                favClassId: favClass.map(item=>item._id),
+                favClassId: favClass._id,
                 status:'service_done',
-                favClassName: favClass.map(item=>item.class_Name),
-                class_Image: favClass.map(item=>item.class_Image)
+                // favClassName: favClass.map(item=>item.class_Name),
+                favClassName: favClass.class_Name,
+                class_Image: favClass.class_Image
             }
 
             axiosSecure.post('/payments/success',payments)
