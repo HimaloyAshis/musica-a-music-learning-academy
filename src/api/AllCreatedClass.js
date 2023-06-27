@@ -7,7 +7,7 @@ const AllCreatedClass = () => {
     const {loading ,user } = useAuth()
     // const [axiosSecure ] = useAxiosSecure()
 
-    const {data: AllClasses = [], refetch} = useQuery({
+    const {data: AllClasses = [], isLoading, refetch} = useQuery({
         queryKey: ['AllClasses', user?.email],
         // enabled: !loading,
         queryFn: async ()=>{
@@ -20,7 +20,7 @@ const AllCreatedClass = () => {
     })
     console.log( 'allClass crt',AllClasses)
 
-    return [AllClasses, refetch]
+    return [AllClasses, isLoading, refetch]
 };
 
 export default AllCreatedClass;

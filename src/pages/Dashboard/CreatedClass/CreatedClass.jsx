@@ -25,7 +25,11 @@ const CreatedClass = () => {
 
     // })
 
-    const [AllClasses] = AllCreatedClass()
+    const [AllClasses, isLoading] = AllCreatedClass()
+
+    if(isLoading){
+        return <p>Loading .......</p>
+    }
 
 
 
