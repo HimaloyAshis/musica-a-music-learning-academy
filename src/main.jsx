@@ -10,7 +10,7 @@ import 'react-toastify/dist/ReactToastify.css';
 const queryClient = new QueryClient()
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <div>
       <AuthProvider>
         <QueryClientProvider client={queryClient}>
@@ -18,5 +18,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         </QueryClientProvider>
       </AuthProvider>
     </div>
-  </React.StrictMode>,
+  // </React.StrictMode>,
 )
