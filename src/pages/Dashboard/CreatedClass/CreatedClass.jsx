@@ -2,10 +2,28 @@ import React from 'react';
 import { ToastContainer } from 'react-toastify';
 import GetClass from '../../../api/GetClass';
 import CreatedClassTab from './CreatedClassTab';
+import { useQuery } from 'react-query';
+import useAuth from '../../../Hook/useAuth';
+import useAxiosSecure from '../../../Hook/useAxiosSecure';
 
 const CreatedClass = () => {
 
-    const [AllClass] = GetClass()
+    // const [AllClass] = GetClass()
+    const {loading ,user } = useAuth()
+    const [axiosSecure ] = useAxiosSecure()
+
+    const {data: AllClass = []} = useQuery({
+        queryKey: ['AllClass', user?.email],
+        queryFn: async ()=>{
+            const res = await axiosSecure.get(`https://music-instrument-learning-server-himlaoy.vercel.app/class/instructor${user?.email}`)
+            return res.dada
+        }
+
+        
+    })
+
+    
+
     console.log(AllClass)
 
     return (
