@@ -99,7 +99,7 @@ const CheckOutForm = ({favClass, price}) => {
             
             axiosSecure.post('/payments',payment)
             .then(res=>{
-                console.log(res.data.insertResult)
+                console.log('pay 102',res.data.insertResult)
                 if(res.data.insertResult.insertedId){
 
                     Swal.fire({
