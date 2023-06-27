@@ -9,7 +9,7 @@ const PaySuccessClass = () => {
 
     const { data: PaySuccess = [] } = useQuery({
         queryKey: ['PaySuccess', user?.email],
-        // enabled: !loading,
+        enabled: !loading,
         queryFn: async () => {
             const res = await axios(`https://music-instrument-learning-server-himlaoy.vercel.app/paySuccess/class/${user?.email}`)
             // console.log(res.data)
@@ -18,6 +18,7 @@ const PaySuccessClass = () => {
     })
 
     // console.log(PaySuccess)
+    
 
     return (
         <div className="overflow-x-auto ">
