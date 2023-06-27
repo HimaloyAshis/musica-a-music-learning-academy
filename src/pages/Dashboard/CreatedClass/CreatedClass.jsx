@@ -15,7 +15,7 @@ const CreatedClass = () => {
     const {data: AllClass = []} = useQuery({
         queryKey: ['AllClass', user?.email],
         queryFn: async ()=>{
-            const res = await axiosSecure.get(`https://music-instrument-learning-server-himlaoy.vercel.app/class/instructor${user?.email}`)
+            const res = await axiosSecure.get(`https://music-instrument-learning-server-himlaoy.vercel.app/class/instructor/${user?.email}`)
             return res.dada
         }
 
