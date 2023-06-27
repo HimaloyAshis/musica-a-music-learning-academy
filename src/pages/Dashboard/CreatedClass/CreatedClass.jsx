@@ -6,27 +6,30 @@ import { useQuery } from 'react-query';
 import useAuth from '../../../Hook/useAuth';
 import useAxiosSecure from '../../../Hook/useAxiosSecure';
 import axios from 'axios';
+import AllCreatedClass from '../../../api/AllCreatedClass';
 
 const CreatedClass = () => {
 
     // const [AllClass] = GetClass()
-    const {loading ,user } = useAuth()
-    const [axiosSecure ] = useAxiosSecure()
+    // const {loading ,user } = useAuth()
+    // // const [axiosSecure ] = useAxiosSecure()
 
-    const {data: AllClasses = []} = useQuery({
-        queryKey: ['AllClasses', user?.email],
-        enabled: !loading,
-        queryFn: async ()=>{
-            const res = await axios(`https://music-instrument-learning-server-himlaoy.vercel.app/class/instructor/${user?.email}`)
-            return res.dada
-        }
+    // const {data: AllClasses = []} = useQuery({
+    //     queryKey: ['AllClasses', user?.email],
+    //     enabled: !loading,
+    //     queryFn: async ()=>{
+    //         const res = await axios(`https://music-instrument-learning-server-himlaoy.vercel.app/class/instructor/${user?.email}`)
+    //         return res.dada
+    //     }
 
         
-    })
+    // })
+
+    const [AllClasses]  = AllCreatedClass()
 
     
 
-    console.log(AllClasses)
+    console.log('createdClass',AllClasses)
 
     return (
         <div className="overflow-x-auto">
