@@ -17,7 +17,7 @@ const PopularSection = () => {
 
     return (
         <div className='py-10'>
-            <h1 className='font-extrabold text-4xl text-center pb-4 text-[#]'>Here are the most trending class in Musica</h1>
+            <h1 className='font-extrabold text-4xl text-center pb-4 text-[#42a1b0]'>Here are the most trending class in Musica</h1>
             <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4 py-6'>
                 {
                     popular.map(pop => <PopularCard key={pop._id} pop={pop}></PopularCard>)
