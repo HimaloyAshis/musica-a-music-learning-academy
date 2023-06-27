@@ -1,14 +1,17 @@
 import axios from 'axios';
 import React from 'react';
 import { useQuery } from 'react-query';
+import useAuth from '../../../Hook/useAuth';
 
 const PaymentHistory = () => {
 
+    const {loading, user} = useAuth()
+
     const { data: PayInOrderTime = [] } = useQuery({
         queryKey: ['PayInOrderTime'],
-        // enabled: !loading,
+        enabled: !loading,
         queryFn: async () => {
-            const res = await axios(`https://music-instrument-learning-server-himlaoy.vercel.app/paySuccess/AllClass`)
+            const res = await axios(`https://music-instrument-learning-server-himlaoy.vercel.app/paySuccess/AllClass/${user?.email}`)
             // console.log(res.data)
             return res.data
         }

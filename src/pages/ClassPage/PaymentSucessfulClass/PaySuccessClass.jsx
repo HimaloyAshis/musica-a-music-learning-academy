@@ -5,7 +5,7 @@ import useAuth from '../../../Hook/useAuth';
 import PaySuccessClassCard from './PaySuccessClassCard';
 
 const PaySuccessClass = () => {
-    const { user } = useAuth()
+    const {loading , user } = useAuth()
 
     const { data: PaySuccess = [] } = useQuery({
         queryKey: ['PaySuccess', user?.email],
