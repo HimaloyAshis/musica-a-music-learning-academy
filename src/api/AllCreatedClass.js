@@ -7,9 +7,9 @@ const AllCreatedClass = () => {
     const {loading ,user } = useAuth()
     // const [axiosSecure ] = useAxiosSecure()
 
-    const {data: AllClasses = [], refetch, isLoading} = useQuery({
-        queryKey: ['AllClass', user?.email],
-        enabled: !isLoading,
+    const {data: AllClasses = [], refetch} = useQuery({
+        queryKey: ['AllClasses', user?.email],
+        // enabled: !loading,
         queryFn: async ()=>{
             const res = await axios(`https://music-instrument-learning-server-himlaoy.vercel.app/class/instructor/${user?.email}`)
             console.log( 'all create class',res.data)
@@ -20,7 +20,7 @@ const AllCreatedClass = () => {
     })
     console.log( 'allClass crt',AllClasses)
 
-    return {AllClasses, refetch}
+    return [AllClasses, refetch]
 };
 
 export default AllCreatedClass;

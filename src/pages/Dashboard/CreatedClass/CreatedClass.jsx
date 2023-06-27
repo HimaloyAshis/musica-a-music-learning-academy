@@ -25,7 +25,7 @@ const CreatedClass = () => {
 
     // })
 
-    const {AllClasses} = AllCreatedClass()
+    const [AllClasses] = AllCreatedClass()
 
 
 
