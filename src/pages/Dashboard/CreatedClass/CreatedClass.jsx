@@ -5,6 +5,7 @@ import CreatedClassTab from './CreatedClassTab';
 import { useQuery } from 'react-query';
 import useAuth from '../../../Hook/useAuth';
 import useAxiosSecure from '../../../Hook/useAxiosSecure';
+import axios from 'axios';
 
 const CreatedClass = () => {
 
@@ -16,7 +17,7 @@ const CreatedClass = () => {
         queryKey: ['AllClass', user?.email],
         enabled: !loading,
         queryFn: async ()=>{
-            const res = await axiosSecure.get(`/class/instructor/${user?.email}`)
+            const res = await axios(`https://music-instrument-learning-server-himlaoy.vercel.app/class/instructor/${user?.email}`)
             return res.dada
         }
 
