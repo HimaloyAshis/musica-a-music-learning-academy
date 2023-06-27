@@ -20,7 +20,7 @@ const AllCreatedClass = () => {
     })
     console.log( 'allClass crt',AllClasses)
 
-    return [AllClasses, refetch]
+    return {AllClasses, refetch}
 };
 
 export default AllCreatedClass;

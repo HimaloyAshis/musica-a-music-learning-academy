@@ -22,14 +22,14 @@ const CreatedClass = () => {
     //         return res.dada
     //     }
 
-        
+
     // })
 
-    const [AllClasses]  = AllCreatedClass()
+    const {AllClasses} = AllCreatedClass()
 
-    
 
-    console.log('createdClass',AllClasses)
+
+    console.log('createdClass', AllClasses)
 
     return (
         <div className="overflow-x-auto">
