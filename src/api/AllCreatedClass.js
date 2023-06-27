@@ -12,6 +12,7 @@ const AllCreatedClass = () => {
         enabled: !loading,
         queryFn: async ()=>{
             const res = await axios(`https://music-instrument-learning-server-himlaoy.vercel.app/class/instructor/${user?.email}`)
+            console.log( 'all create class',res.data)
             return res.dada
         }
 
