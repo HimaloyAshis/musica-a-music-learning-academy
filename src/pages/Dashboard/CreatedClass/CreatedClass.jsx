@@ -13,8 +13,8 @@ const CreatedClass = () => {
     const {loading ,user } = useAuth()
     const [axiosSecure ] = useAxiosSecure()
 
-    const {data: AllClass = []} = useQuery({
-        queryKey: ['AllClass', user?.email],
+    const {data: AllClasses = []} = useQuery({
+        queryKey: ['AllClasses', user?.email],
         enabled: !loading,
         queryFn: async ()=>{
             const res = await axios(`https://music-instrument-learning-server-himlaoy.vercel.app/class/instructor/${user?.email}`)
@@ -26,7 +26,7 @@ const CreatedClass = () => {
 
     
 
-    console.log(AllClass)
+    console.log(AllClasses)
 
     return (
         <div className="overflow-x-auto">
@@ -51,7 +51,7 @@ const CreatedClass = () => {
                 </thead>
                 <tbody>
                     {
-                        AllClass?.map((cls, index) => <CreatedClassTab key={cls._id} AllClass={cls} index={index}></CreatedClassTab>)
+                        AllClasses?.map((cls, index) => <CreatedClassTab key={cls._id} AllClass={cls} index={index}></CreatedClassTab>)
                     }
 
                 </tbody>
