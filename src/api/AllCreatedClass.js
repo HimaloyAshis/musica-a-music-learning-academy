@@ -18,6 +18,7 @@ const AllCreatedClass = () => {
 
         
     })
+    console.log( 'allClass crt',AllClasses)
 
     return [AllClasses, refetch]
 };
