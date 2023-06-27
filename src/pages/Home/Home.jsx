@@ -5,7 +5,7 @@ import PopularInstructor from './PopularInstructor.jsx/PopularInstructor';
 import AboutUs from './AboutUs/AboutUs';
 const Home = () => {
     return (
-        <div className='bg-[#E5F9DB]'>
+        <div className='bg-[#164B60]'>
             <Slider></Slider>
             <PopularSection></PopularSection>
             <PopularInstructor></PopularInstructor>
