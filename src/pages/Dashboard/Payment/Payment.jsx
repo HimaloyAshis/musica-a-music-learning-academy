@@ -4,6 +4,7 @@ import CheckOutForm from './CheckOutForm';
 import { loadStripe } from '@stripe/stripe-js';
 import useSelectedClass from '../../../Hook/useSelectedClass';
 import { useLoaderData } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 const stripePromise = loadStripe(import.meta.env.VITE_PUBLISHABLE_KEY);
 
@@ -22,6 +23,9 @@ const Payment = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Musica || Dashboard || Payment Page </title>
+            </Helmet>
             <h1 className='text-center font-extrabold text-4xl text-[#606C5D] py-6'>please process your payment: {favClass.price} </h1>
             <Elements stripe={stripePromise}>
                 <CheckOutForm favClass={favClass} price={parseInt(favClass.price)}></CheckOutForm>

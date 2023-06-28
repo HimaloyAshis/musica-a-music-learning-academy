@@ -5,6 +5,7 @@ import { useLoaderData } from 'react-router-dom';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'sweetalert2/src/sweetalert2.scss'
+import { Helmet } from 'react-helmet';
 
 
 const UpdateCreateClass = () => {
@@ -30,6 +31,9 @@ const UpdateCreateClass = () => {
 
     return (
         <form onSubmit={handleSubmit(onSubmit)} className='gap-5 text-center py-3'>
+            <Helmet>
+                <title>Musica || Dashboard || Update Class Page </title>
+            </Helmet>
 
             <ToastContainer></ToastContainer>
             <input type="text" placeholder="Class Name" className="input m-3 input-bordered input-accent w-full max-w-xs" defaultValue={class_Name} {...register("class_Name", {required:true})} />

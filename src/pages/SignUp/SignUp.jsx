@@ -6,6 +6,7 @@ import useAuth from '../../Hook/useAuth';
 import { ToastContainer, toast } from 'react-toastify';
 import SocialLogin from '../../SocialLogin/SocialLogin';
 import 'react-toastify/dist/ReactToastify.css';
+import { Helmet } from 'react-helmet';
 
 const SignUp = () => {
     const [error, setError] = useState()
@@ -39,6 +40,9 @@ const SignUp = () => {
 
     return (
         <div className="hero min-h-screen bg-base-200 py-5">
+            <Helmet>
+                <title>Musica || Sign Up Page </title>
+            </Helmet>
             <ToastContainer></ToastContainer>
             <div className="hero-content flex-col lg:flex">
                 <div className="text-center lg:text-center">

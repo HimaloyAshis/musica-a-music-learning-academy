@@ -2,6 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import useAuth from '../../../Hook/useAuth';
 import { addClasses } from '../../../api/AddClass';
+import { Helmet } from 'react-helmet';
 
 const Instructors = () => {
 
@@ -17,6 +18,9 @@ const Instructors = () => {
 
     return (
         <form onSubmit={handleSubmit(onSubmit)} className='gap-5 text-center py-3'>
+            <Helmet>
+                <title>Musica || Dashboard || Class create Page </title>
+            </Helmet>
 
             <input type="text" placeholder="Class Name" className="input m-3 input-bordered input-accent w-full max-w-xs" {...register("class_Name", {required:true})} />
 

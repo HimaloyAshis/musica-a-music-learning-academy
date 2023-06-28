@@ -3,6 +3,7 @@ import React from 'react';
 import { useQuery } from 'react-query';
 import useAllUser from '../../../Hook/useAllUser';
 import AllUserTable from './AllUserTable';
+import { Helmet } from 'react-helmet';
 
 const AllUser = () => {
 
@@ -11,6 +12,9 @@ const AllUser = () => {
     
     return (
         <div className="overflow-x-auto">
+            <Helmet>
+                <title>Musica || Dashboard || All user Page </title>
+            </Helmet>
             <table className="table">
                 {/* head */}
                 <thead>

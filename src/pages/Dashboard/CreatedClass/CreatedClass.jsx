@@ -7,6 +7,7 @@ import useAuth from '../../../Hook/useAuth';
 import useAxiosSecure from '../../../Hook/useAxiosSecure';
 import axios from 'axios';
 import AllCreatedClass from '../../../api/AllCreatedClass';
+import { Helmet } from 'react-helmet';
 
 const CreatedClass = () => {
 
@@ -37,6 +38,9 @@ const CreatedClass = () => {
 
     return (
         <div className="overflow-x-auto">
+            <Helmet>
+                <title>Musica || Dashboard || Created Class Page </title>
+            </Helmet>
             <ToastContainer></ToastContainer>
             <table className="table">
                 {/* head */}

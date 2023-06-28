@@ -5,6 +5,7 @@ import useAuth from '../../Hook/useAuth';
 import { ToastContainer, toast } from 'react-toastify';
 import SocialLogin from '../../SocialLogin/SocialLogin';
 import 'react-toastify/dist/ReactToastify.css';
+import { Helmet } from 'react-helmet';
 
 const Login = () => {
 
@@ -30,6 +31,9 @@ const Login = () => {
 
     return (
         <div className="hero min-h-screen bg-base-200">
+            <Helmet>
+                <title>Musica || Login Page </title>
+            </Helmet>
             <ToastContainer></ToastContainer>
             <div className="hero-content flex-col lg:flex">
                 <div className="text-center lg:text-center">

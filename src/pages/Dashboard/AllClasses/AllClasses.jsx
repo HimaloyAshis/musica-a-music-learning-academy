@@ -2,6 +2,7 @@ import React from 'react';
 import GetClass from '../../../api/GetClass';
 import AllclassTa from './AllclassTa';
 import { ToastContainer } from 'react-toastify';
+import { Helmet } from 'react-helmet';
 
 const AllClasses = () => {
     const [AllClass] = GetClass()
@@ -10,6 +11,9 @@ const AllClasses = () => {
 
     return (
         <div className="overflow-x-auto">
+            <Helmet>
+                <title>Musica || Dashboard || Created All Class Page </title>
+            </Helmet>
             <ToastContainer></ToastContainer>
             <table className="table">
                 {/* head */}

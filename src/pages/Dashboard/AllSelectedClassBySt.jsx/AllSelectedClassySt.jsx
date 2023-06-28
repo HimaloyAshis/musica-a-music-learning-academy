@@ -3,6 +3,7 @@ import React from 'react';
 import { useQuery } from 'react-query';
 import useAuth from '../../../Hook/useAuth';
 import AllSelectClassDashCard from './AllSelectClassDashCard';
+import { Helmet } from 'react-helmet';
 
 const AllSelectedClassySt = () => {
 
@@ -25,6 +26,9 @@ const AllSelectedClassySt = () => {
 
     return (
         <div className="overflow-x-auto">
+            <Helmet>
+                <title>Musica || Dashboard || Selected Class Page </title>
+            </Helmet>
             <div>
                 <p className='text-3xl font-bold text-center text-[#8BACAA]'>Total price : $ {allTotal}</p>
             </div>
