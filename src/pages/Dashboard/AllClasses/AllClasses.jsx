@@ -15,7 +15,7 @@ const AllClasses = () => {
                 <title>Musica || Dashboard || Created All Class Page </title>
             </Helmet>
             <ToastContainer></ToastContainer>
-            <table className="table">
+            <table className="table text-[#1c3a45]">
                 {/* head */}
                 <thead>
                     <tr>

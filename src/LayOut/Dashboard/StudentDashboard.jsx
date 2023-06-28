@@ -6,7 +6,7 @@ import AllCreatedClass from '../../api/AllCreatedClass';
 const StudentDashboard = () => {
     const [AllClasses] = AllCreatedClass()
     return (
-        <div>
+        <div className='text-[#1c3a45]'>
             <li><Link to={'/'}><FaHome></FaHome> Student Home</Link></li>
             <li><Link to={'/dashboard/selectedClass'}><FaPlus></FaPlus> My class</Link></li>
             <li><Link to={'/dashboard/paySuccessClass'}><FaThList></FaThList>Enrolled Class</Link></li>

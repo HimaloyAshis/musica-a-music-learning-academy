@@ -11,7 +11,7 @@ const AllUser = () => {
    console.log(allUser)
     
     return (
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto text-[#1c3a45]">
             <Helmet>
                 <title>Musica || Dashboard || All user Page </title>
             </Helmet>
