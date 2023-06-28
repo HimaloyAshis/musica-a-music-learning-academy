@@ -2,6 +2,7 @@ import axios from 'axios';
 import React from 'react';
 import { useQuery } from 'react-query';
 import useAuth from '../../../Hook/useAuth';
+import { Helmet } from 'react-helmet';
 
 const PaymentHistory = () => {
 
@@ -21,6 +22,9 @@ const PaymentHistory = () => {
 
     return (
         <div className="overflow-x-auto ">
+            <Helmet>
+                <title>Musica | Dashboard | Payment Hitory Page </title>
+            </Helmet>
 
             <table className="table ">
                 {/* head */}

@@ -3,9 +3,10 @@ import React from 'react';
 import { useQuery } from 'react-query';
 import useAuth from '../../../Hook/useAuth';
 import PaySuccessClassCard from './PaySuccessClassCard';
+import { Helmet } from 'react-helmet';
 
 const PaySuccessClass = () => {
-    const {loading , user } = useAuth()
+    const { loading, user } = useAuth()
 
     const { data: PaySuccess = [] } = useQuery({
         queryKey: ['PaySuccess', user?.email],
@@ -18,11 +19,13 @@ const PaySuccessClass = () => {
     })
 
     // console.log(PaySuccess)
-    
+
 
     return (
         <div className="overflow-x-auto ">
-           
+            <Helmet>
+                <title>Musica | Dashboard Payment Success Class Page </title>
+            </Helmet>
             <table className="table ">
                 {/* head */}
                 <thead>

@@ -22,7 +22,7 @@ const Payment = () => {
 
 
     return (
-        <div>
+        <div className='' data-aos="zoom-in-up">
             <Helmet>
                 <title>Musica || Dashboard || Payment Page </title>
             </Helmet>

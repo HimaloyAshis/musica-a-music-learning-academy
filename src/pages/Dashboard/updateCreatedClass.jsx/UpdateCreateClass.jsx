@@ -54,7 +54,7 @@ const UpdateCreateClass = () => {
                 
             </select>
             <div className='text-center'>
-                <input className="btn w-3/4" type="submit" value={'Add class'} />
+                <input className="btn w-3/4" type="submit" value={'Update class'} />
             </div>
         </form>
     );
