@@ -25,7 +25,7 @@ const AllSelectedClassySt = () => {
     console.log(allTotal)
 
     return (
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto text-[#1c3a45]">
             <Helmet>
                 <title>Musica || Dashboard || Selected Class Page </title>
             </Helmet>

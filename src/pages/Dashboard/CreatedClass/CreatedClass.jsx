@@ -37,7 +37,7 @@ const CreatedClass = () => {
     console.log('createdClass', AllClasses)
 
     return (
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto text-[#1c3a45]">
             <Helmet>
                 <title>Musica || Dashboard || Created Class Page </title>
             </Helmet>
