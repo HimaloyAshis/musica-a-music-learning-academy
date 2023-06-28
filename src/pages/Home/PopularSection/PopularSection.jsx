@@ -17,7 +17,7 @@ const PopularSection = () => {
     // console.log(popular)
 
     return (
-        <div className='py-10' data-aos="fade-up"
+        <div className='py-10' data-aos="fade-right"
         data-aos-duration="2000">
             <Helmet>
                 <title>Musica || Home </title>
