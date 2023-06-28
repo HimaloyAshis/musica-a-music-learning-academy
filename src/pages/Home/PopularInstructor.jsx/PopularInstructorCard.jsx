@@ -7,7 +7,8 @@ const PopularInstructorCard = ({pop}) => {
     // console.log(pop)
 
     return (
-        <div className="card w-96 bg-[#C2DEDC] shadow-xl">
+        <div className="card w-96 bg-[#C2DEDC] shadow-xl " data-aos="fade-up"
+        data-aos-duration="3000">
             <figure className="px-10 pt-10">
                 <img src={image} alt="Shoes" className="rounded-xl" />
             </figure>
