@@ -3,8 +3,8 @@ import './AboutUs.css'
 
 const AboutUs = () => {
     return (
-        <div className='About py-8'>
-            <h1 className='text-3xl font-extrabold text-center pt-5' data-aos="fade-up"
+        <div className='About py-8' data-aos="zoom-in-down">
+            <h1 className='text-3xl font-extrabold text-center pt-5 text-white' data-aos="fade-up"
                 data-aos-duration="3000">Why Choose US</h1>
             <div className='w-2/3 mx-auto py-10' data-aos="fade-up"
                 data-aos-duration="3000">
@@ -12,7 +12,7 @@ const AboutUs = () => {
             </div>
             <div className='w-2/3 mx-auto py-10 ' data-aos="fade-up"
                 data-aos-duration="3000">
-                <button className="btn btn-outline text-center">Let's Know More</button>
+                <button className="btn btn-outline text-center text-white">Let's Know More</button>
             </div>
         </div>
     );
