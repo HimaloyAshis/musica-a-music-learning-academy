@@ -17,8 +17,8 @@ const PopularInstructor = () => {
 
     console.log(user)
     return (
-        <div className='py-12' data-aos="fade-up"
-        data-aos-duration="3000">
+        <div className='py-12' data-aos="fade-left"
+        >
             <h1 className='font-extrabold text-4xl text-center pb-5 text-[#2E8A99]'>Here are all famous instructor in Musica</h1>
             <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4 py-6'>
                 {
