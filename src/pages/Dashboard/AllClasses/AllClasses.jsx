@@ -10,7 +10,7 @@ const AllClasses = () => {
 
 
     return (
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto text-[rgb(21,47,58)]">
             <Helmet>
                 <title>Musica || Dashboard || Created All Class Page </title>
             </Helmet>
