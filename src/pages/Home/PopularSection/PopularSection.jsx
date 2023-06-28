@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import { useQuery } from 'react-query';
 import PopularCard from './PopularCard';
+import { Helmet } from 'react-helmet';
 
 const PopularSection = () => {
 
@@ -16,7 +17,13 @@ const PopularSection = () => {
     // console.log(popular)
 
     return (
-        <div className='py-10'>
+        <div className='py-10' data-aos="fade-up"
+        data-aos-duration="3000">
+            <Helmet>
+                {/* <meta charSet="utf-8" /> */}
+                <title>My Title</title>
+                
+            </Helmet>
             <h1 className='font-extrabold text-4xl text-center pb-4 text-[#42a1b0]'>Here are the most trending class in Musica</h1>
             <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4 py-6'>
                 {
