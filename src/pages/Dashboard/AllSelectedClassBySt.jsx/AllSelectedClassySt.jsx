@@ -32,7 +32,7 @@ const AllSelectedClassySt = () => {
             <div>
                 <p className='text-3xl font-bold text-center text-[#8BACAA]'>Total price : $ {allTotal}</p>
             </div>
-            <table className="table">
+            <table className="table text-[#1c3a45]">
                 {/* head */}
                 <thead>
                     <tr>

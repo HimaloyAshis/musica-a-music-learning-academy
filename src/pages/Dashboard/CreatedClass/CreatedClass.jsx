@@ -42,7 +42,7 @@ const CreatedClass = () => {
                 <title>Musica || Dashboard || Created Class Page </title>
             </Helmet>
             <ToastContainer></ToastContainer>
-            <table className="table">
+            <table className="table text-[#1c3a45]">
                 {/* head */}
                 <thead>
                     <tr className=''>
