@@ -21,7 +21,7 @@ const AllUserTable = ({users, index}) => {
     // }
 
     return (
-        <tr>
+        <tr className='text-[#1c3a45]'>
             <th>
                 {index + 1}
             </th>

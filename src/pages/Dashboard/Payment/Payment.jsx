@@ -26,7 +26,7 @@ const Payment = () => {
             <Helmet>
                 <title>Musica || Dashboard || Payment Page </title>
             </Helmet>
-            <h1 className='text-center font-extrabold text-4xl text-[#606C5D] py-6'>please process your payment: {favClass.price} </h1>
+            <h1 className='text-center font-extrabold text-4xl text-[#606C5D] py-6'>please process your payment:$ {favClass.price} </h1>
             <Elements stripe={stripePromise}>
                 <CheckOutForm favClass={favClass} price={parseInt(favClass.price)}></CheckOutForm>
             </Elements>
