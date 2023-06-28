@@ -30,7 +30,7 @@ const InstructorPage = () => {
     // console.log(allUser)
 
     return (
-        <div>
+        <div className='bg-[#164B60]'>
              <Helmet>
                 <title>Musica || Instructors Page </title>
             </Helmet>
