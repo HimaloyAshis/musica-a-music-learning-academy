@@ -3,7 +3,7 @@ import './AboutUs.css'
 
 const AboutUs = () => {
     return (
-        <div className='About py-8' data-aos="zoom-in-down">
+        <div className='About py-8' data-aos="zoom-in-down" data-aos-duration="3000">
             <h1 className='text-3xl font-extrabold text-center pt-5 text-white' data-aos="fade-up"
                 data-aos-duration="3000">Why Choose US</h1>
             <div className='w-2/3 mx-auto py-10' data-aos="fade-up"
