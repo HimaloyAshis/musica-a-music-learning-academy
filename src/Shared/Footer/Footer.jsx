@@ -3,7 +3,7 @@ import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
 const Footer = () => {
     return (
-        <div className='grid grid-cols-1 md:grid-cols-3 h-72 lg:grid-cols-3 gap-3 py-4 px-5 bg-[#0B2447] w-'>
+        <div className='grid grid-cols-1 md:grid-cols-3 h-80 lg:grid-cols-3 gap-3 py-4 px-5 bg-[#0B2447] w-'>
             <div className='text-white'>
                 <p>Musica Academy</p>
                 <p>please Subscribe</p>
