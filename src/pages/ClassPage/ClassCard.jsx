@@ -9,6 +9,7 @@ import useInstructor from '../../Hook/useInstructor';
 import useAdmin from '../../Hook/useAdmin';
 
 
+
 const ClassCard = ({ classes }) => {
 
     const { user } = useAuth()
@@ -82,7 +83,6 @@ const ClassCard = ({ classes }) => {
 
     return (
         <div className={`card w-96 py-6  shadow-xl text-[#0B2447] ${parseInt(availableSeats) === 0 ? `bg-red-500`: `bg-[#C2DEDC]`}`} data-aos="flip-left">
-            <ToastContainer></ToastContainer>
             <figure className="px-10 pt-10">
                 <img src={class_Image} alt="Shoes" className="rounded-xl" />
             </figure>
