@@ -42,7 +42,7 @@ const Class = () => {
                 <title>Musica | Class Page </title>
             </Helmet>
             <h1 className='text-center font-extrabold text-4xl text-[#2E8A99] py-6' data-aos="fade-left">Here is all class we provide</h1>
-            <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-3 my-10' >
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 my-10' >
                 {
                     allClasses.map(classes => <ClassCard key={classes._id} classes={classes}></ClassCard>)
                 }

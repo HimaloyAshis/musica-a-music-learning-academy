@@ -6,7 +6,7 @@ const PopularCard = ({ pop }) => {
     const {class_Image,class_Name} = pop
 
     return (
-        <div className="card w-96 bg-[#C2DEDC] text-[#0B2447] shadow-xl">
+        <div className="card lg:w-96 md:w-72 bg-[#C2DEDC] text-[#0B2447] shadow-xl">
             <figure className="px-10 pt-10">
                 <img src={class_Image} alt="Shoes" className="rounded-xl" />
             </figure>

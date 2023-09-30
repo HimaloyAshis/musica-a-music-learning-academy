@@ -81,7 +81,7 @@ const ClassCard = ({ classes }) => {
 
 
     return (
-        <div className={`card w-96 py-6  shadow-xl text-[#0B2447] ${parseInt(availableSeats) === 0 ? `bg-red-500`: `bg-[#EEE2DE]`}`} data-aos="flip-left">
+        <div className={`card w-96 py-6  shadow-xl text-[#0B2447] ${parseInt(availableSeats) === 0 ? `bg-red-500`: `bg-[#C2DEDC]`}`} data-aos="flip-left">
             <ToastContainer></ToastContainer>
             <figure className="px-10 pt-10">
                 <img src={class_Image} alt="Shoes" className="rounded-xl" />
@@ -92,7 +92,7 @@ const ClassCard = ({ classes }) => {
                 <p>AvailableSeats: {availableSeats}</p>
                 <p>price: $ {price}</p>
                 <div className="card-actions">
-                    <button disabled={availableSeats=== 0 || isAdmin|| isInstructor } onClick={() => handleAvailableSeats(classes._id)} className="btn  bg-[#829797]">Select Class</button>
+                    <button disabled={availableSeats=== 0 || isAdmin|| isInstructor } onClick={() => handleAvailableSeats(classes._id)} className="btn butn">Select Class</button>
                 </div>
             </div>
         </div>
