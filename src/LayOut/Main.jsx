@@ -4,11 +4,14 @@ import Navbar from '../Shared/Navbar/Navbar';
 import Footer from '../Shared/Footer/Footer';
 
 const Main = () => {
+
+    const noFooter = location.pathname.includes('login') || location.pathname.includes('logout')
+
     return (
         <div>
-            <Navbar></Navbar>
+            {noFooter || <Navbar></Navbar>}
             <Outlet></Outlet>
-            <Footer></Footer>
+            {noFooter || <Footer></Footer>}
         </div>
     );
 };
