@@ -25,7 +25,7 @@ const Navbar = () => {
                 <span onClick={() => setOpen(!Open)} className='md:hidden '>
 
                     {
-                        Open === true ? < XMarkIcon className="h-6 w-6 text-blue-500 cursor-wait" />
+                        Open === true ? < XMarkIcon className="h-6 w-6 text-blue-500 cursor-pointer" />
                             : <Bars3Icon className="h-6 w-6 text-blue-500 cursor-pointer" />
                     }
                 </span>
