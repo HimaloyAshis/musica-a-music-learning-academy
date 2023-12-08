@@ -27,10 +27,6 @@ const InstructorPage = () => {
     console.log(instructors)
 
 
-
-    // const [allUser] = useAllUser()
-    // console.log(allUser)
-
     return (
         <div className='bg-[#164B60]'>
             <ToastContainer></ToastContainer>

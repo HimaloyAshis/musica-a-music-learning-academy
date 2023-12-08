@@ -32,13 +32,13 @@ const Navbar = () => {
             </div>
             <div className={` md:flex z-10 justify-between hover: bg-[#164863] py-4 px-4 rounded-md mt duration-500 text-white font-bold absolute md:static   ${Open ? 'top-6' : "-top-96"} `}>
                 <div className='sm:my-2'>
-                    <h1 className='text-2xl font-bold  text-[#bdcfcd]'>Musica</h1>
+                    <Link><h1 className='text-2xl font-bold  text-[#bdcfcd]'>Musica</h1></Link>
                 </div>
-                
+
                 <ul className='md:flex gap-3'>
-                    <li className='mb-1 tex-2xl font-bold px-3 py-2 rounded-md hover:bg-[#1450A3]'><Link>Home</Link></li>
-                    <li className='mb-1 tex-2xl px-3 py-2 rounded-md hover:bg-[#1450A3]'><Link>Instructors</Link></li>
-                    <li className='mb-1 tex-2xl px-3 py-2 rounded-md hover:bg-[#1450A3]'><Link>Class</Link></li>
+                    <li className='mb-1 tex-2xl font-bold px-3 py-2 rounded-md hover:bg-[#1450A3]'><Link to={"/"}>Home</Link></li>
+                    <li className='mb-1 tex-2xl px-3 py-2 rounded-md hover:bg-[#1450A3]'><Link to={"/instructors"}>Instructors</Link></li>
+                    <li className='mb-1 tex-2xl px-3 py-2 rounded-md hover:bg-[#1450A3]'><Link to={"/class"}>Class</Link></li>
                     {
                         user ? <li className=''>
                             <div className='md:flex  items-center  gap-2'>
